@@ -608,7 +608,7 @@ section .section-title {
 
 .frontside .card .card-title,
 .backside .card .card-title {
-    color: #007b5e !important;
+    color: #ef6023  !important;
 }
 
 .frontside .card .card-body img {
@@ -648,4 +648,24 @@ section .section-title {
 
 .orange-background {
       background: #ef6023;
+}
+
+footer{
+    background-color: #4e6b4c;
+}
+
+#page-content #showcase-projects .item .showcase-project .content .meta h3, #page-content #showcase-projects .item .showcase-trek .content .meta h3, #page-content #showcase-treks .item .showcase-project .content .meta h3, #page-content #showcase-treks .item .showcase-trek .content .meta h3 {
+    color: #ef6023;
+}
+
+h1, h2, h3, h4, h5, h6 {
+        color: #ef6023;
+}
+
+.mt30{
+    margin-top: 30px;
+}
+
+a{
+        color: #ef6023;
 }
