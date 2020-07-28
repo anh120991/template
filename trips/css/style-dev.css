@@ -1,6 +1,6 @@
 
 .site-navbar .site-logo a img {
-    width: 110px;
+    width: 200px;
 }
 
 .site-section-cover, .site-section-cover .container > .row {
@@ -72,6 +72,10 @@ margin-top: 10px;
   .navbar-light .navbar-nav .nav-link {
    /* border-bottom: 1px solid #28a745;} */
    padding-right: 1rem;
+   font-family: arial;
+    font-weight: bold;
+    font-size: 13px;
+    color: #929292;
 }
 .nav-item a.active {
   color: #ea5625 !important; 
@@ -730,3 +734,30 @@ background-color: #eee;
 a {
     color: #ea5625;
   }
+  .site-navbar{
+        padding: 5px
+  }
+
+  /**************SLIDE **************/
+#carouselSlideBanner h5 { font-family: Papyrus, fantasy;
+    font-size: 37px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+    color: #d64300;
+    -webkit-text-stroke: 0.1px white;
+} 
+  /*************** END SLIDE***************/
+
+  .title-welcome{
+    font-family: Papyrus, fantasy; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
+    color: #e57e4f;
+  }
+
+ .content-welcome{
+    font-family: arial;
+    font-weight: bold;
+    color: #525252;
+  }
+

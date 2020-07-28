@@ -463,3 +463,5 @@ window.onload = function() {
 			
 		})
 }
+var slideIndex = 0;
+
