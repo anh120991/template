@@ -1,0 +1,40 @@
+﻿@model IEnumerable<HDBH.Models.ViewModel.InsuranceContractProductViewModel>
+@{
+    HDBH.Models.ViewModel.InsuranceContractProductViewModel template = new HDBH.Models.ViewModel.InsuranceContractProductViewModel();
+}
+<tr id="trTemplate" class="hidden">
+    @Html.Partial("~/Areas/InsuranceContract/Views/Shared/_templateProduct.cshtml", template)
+</tr>
+
+@if (Model != null && Model.Any())
+{
+    int i = 1;
+    foreach (var item in Model)
+    {
+        string viewModel = ViewBag.viewMode;
+        bool isUpdate = false;
+        if (!string.IsNullOrEmpty(viewModel))
+        {
+            isUpdate = true;
+        }
+        if(isUpdate && i == Model.Count())
+        {
+            item.isShowAdd = true;
+        }
+        else
+        {
+            item.isShowAdd = false;
+        }
+        item.isShowRemove = true;
+        <tr name="rowData">
+            @Html.Partial("~/Areas/InsuranceContract/Views/Shared/_templateProduct.cshtml", item)
+        </tr>
+        i++;
+    }
+}
+else
+{
+    <tr isFirst="1" name="rowData">
+        @Html.Partial("~/Areas/InsuranceContract/Views/Shared/_templateProduct.cshtml", template)
+    </tr>
+}

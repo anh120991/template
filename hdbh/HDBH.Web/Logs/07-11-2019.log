@@ -1,0 +1,40 @@
+﻿ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 11:04:20 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 11:04:20 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 11:04:20 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 13:48:00 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 13:48:00 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 13:48:00 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 13:50:42 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 13:50:42 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 13:50:42 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 14:00:57 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 14:00:57 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 14:00:57 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 14:20:45 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 14:20:45 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 14:20:45 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 14:44:01 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 14:44:01 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 14:44:01 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 15:07:58 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 15:07:58 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 15:07:58 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 15:08:17 ((!)) ResultInsuranceContractDetailService => GetInsuranceContractDetail
+Newtonsoft.Json.JsonSerializationException: Unexpected end when reading JSON. Path '', line 1, position 2.
+   at Newtonsoft.Json.JsonReader.ReadAndAssert()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at HDBH.Services.Services.InsuranceContract.ResultInsuranceContractDetailService.GetInsuranceContractDetail(String p_insuranceContractNo) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\InsuranceContract\ResultInsuranceContractDetailService.cs:line 32
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 15:14:24 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 15:14:24 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 15:14:24 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 16:17:02 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 16:17:02 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 16:17:02 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 17:16:38 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 17:16:38 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/07/2019 17:16:38 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain

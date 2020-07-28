@@ -1,0 +1,86 @@
+﻿@model HDBH.Models.DatabaseModel.CounterPartyDetailModel
+@{
+    ViewBag.Title = "Index";
+    //List<siteMapModel> lsSiteMap = new List<siteMapModel>();
+    // lsSiteMap.Add(new siteMapModel() { title = "Danh sách đối tác", url = @Url.RouteUrl("CounterParty_index") });
+    //lsSiteMap.Add(new siteMapModel() { title = "Thêm mới đối tác", url = "" });
+
+    bool bolIsUpdate = false;
+    bool isView = false;
+    if (Model != null)
+    {
+        bolIsUpdate = Model.viewMode.Contains(HDBH.Models.Constant.ViewModeCons.UPDATE);
+        isView = Model.viewMode.Contains(HDBH.Models.Constant.ViewModeCons.VIEW);
+    }
+}
+
+<style>
+</style>
+
+@section pageTitle {
+    <div class="tabs tabs-style-tzoid">
+        <nav>
+            <ul>
+                <li><a href="@Url.Action("Index")"><span class="glyphicon glyphicon-th-list"></span><span>Danh sách đối tác</span></a> </li>
+                <li class="tab-current"><a><span class="glyphicon glyphicon-plus-sign"></span><span>@(bolIsUpdate ? "Cập nhật đối tác" : "Thêm mới đối tác")</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    @*@Html.Partial("~/Views/Home/_renderSiteMap.cshtml", lsSiteMap)*@
+}
+
+<div id="detailForm">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <form id="form" action="/CounterParty/Manager/@(bolIsUpdate ? "Update" : "Insert")">
+                <fieldset>
+                    <div class="row form-group">
+                        <div class="col-md-2 left-label">
+                            <label class="pull-right">
+                                Nhóm đối tác (*)
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" id="counterPartyGroup" name="counterPartyGroup" @(bolIsUpdate || isView ? "disabled" : "")>
+                                <option value="">Chọn nhóm đối tác</option>
+                                @Html.Raw(Html.Action("_loadCounterPartyGroup", "Manager", new { selected = Model.counterPartyGroup }))
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <legend> Thông tin đối tác</legend>
+                    <div id="counterPartyInfo">
+                        @if (bolIsUpdate|| isView)
+                        {
+                            @Html.Partial("~/Areas/CounterParty/Views/Manager/_detailForm.cshtml", Model);
+                        }
+                    </div>
+
+                </fieldset>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+@section scripts {
+    <script src="~/Scripts/popup/popupSeachCustomer.js"></script>
+    <script>
+        var urlLoadForm = '@Url.Action("loadForm")';
+    </script>
+    <script src="~/Scripts/CounterParty/CounterPartyDetail.js"></script>
+
+    <script>
+        counterParty.Init();
+        popupSearchCus.Init(counterParty.selectRow);
+    </script>
+}

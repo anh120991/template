@@ -1,0 +1,218 @@
+﻿@model HDBH.Models.ViewModel.InsuranceContractViewModel
+@{
+    DateTime signedDate = Model != null && Model.signedDate != null ? DateTime.Parse(Model.signedDate.ToString()) : DateTime.Now;
+    DateTime effectiveDate = Model != null && Model.effectiveDate != null ? DateTime.Parse(Model.effectiveDate.ToString()) : DateTime.Now;
+    DateTime dueDate = Model != null && Model.dueDate != null ? DateTime.Parse(Model.effectiveDate.ToString()) : DateTime.Now;
+
+    string TypeCode = ViewBag.TypeCode;
+    string TypeName = ViewBag.TypeName;
+    string FormCode = ViewBag.FormCode;
+    string ExceptCode = ViewBag.ExceptCode;
+    string ContractNo = ViewBag.ContractNo;
+    string refInsuranceNo = FormCode == "RENEW" ? ContractNo : Model.refInsuranceNo;
+
+
+
+            ///Biến Mode Approve or View
+            bool onlyRead = false;
+    if (Model != null)
+    {
+        onlyRead = Model.viewMode == HDBH.Models.Constant.ViewModeCons.APPROVE || Model.viewMode == HDBH.Models.Constant.ViewModeCons.VIEW ? true : false;
+    }
+}
+<input type="hidden" value="@ExceptCode" name="exceptionTypeCode" />
+<input type="hidden" value="@Model.insuranceId" name="insuranceId" />
+
+<div class="row form-group">
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Loại bảo hiểm
+        </label>
+    </div>
+    <div class="col-md-10">
+        <select class="form-control" name="contractTypeCode" disabled>
+            @Html.Raw(Html.Action("_getListContractType", "Manager", new { area = "InsuranceContract", selected = TypeCode }))
+            @*<option value="@TypeCode">@TypeName</option>*@
+        </select>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Số hợp đồng
+        </label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" name="insuranceContractNo" value="@Model.insuranceContractNo" class="form-control" @(onlyRead ? "readonly" : "") />
+    </div>
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Hình thức hợp đồng
+        </label>
+    </div>
+    <div class="col-md-4">
+        <select class="form-control" name="contractFormCode" @(onlyRead ? "disabled" : "")>
+            @Html.Raw(Html.Action("_getListContractForm", "Manager", new { insuranceContractType = TypeCode, selected = FormCode, area = "InsuranceContract" }))
+        </select>
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Số chứng nhận bảo hiểm
+        </label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" value="@Model.insuranceCertification" name="insuranceCertification" class="form-control" @(onlyRead ? "readonly" : "") />
+    </div>
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Hồ sơ gốc
+        </label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" value="@refInsuranceNo" name="refInsuranceNo" class="form-control" @(FormCode.ToUpper() == "NEW" ? "disabled" : "") />
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Mã khách hàng
+        </label>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group md-form form-sm form-2 pl-0">
+            <input class="form-control my-0 py-1 lime-border" id="customerCif" name="customerCif" type="text" aria-label="Search" value="@Model.customerCif" @(onlyRead ? "readonly" : "")>
+            <div class="input-group-append">
+                <span class="input-group-text lime lighten-2" id="btnCallPopupSearchCustomer" data-title="TÌM KIẾM DANH SÁCH KHÁCH HÀNG" data-toggle="modal" data-target="#lgModal" data-template="~/Views/Shared/Template/_searchCustomer.cshtml">
+                    <i class="fa fa-search text-grey"
+                       aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Tên khách hàng
+        </label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" value="@Model.customerName" name="customerName" class="form-control" disabled />
+        <input type="hidden" value="@Model.shortName" name="shortName" />
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Giá trị bảo hiểm
+        </label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" value="@Model.insuranceValue" name="insuranceValue" class="form-control numberinput2" @(onlyRead ? "readonly" : "") />
+    </div>
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Ngày ký hợp đồng
+        </label>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group date" data-provide="datepicker">
+            <input class="datepicker form-control" id="signedDate" name="signedDate" type="text" value="@signedDate.ToShortDateString()" @(onlyRead ? "readonly" : "") />
+            <div class="input-group-addon">
+                <span class="fa fa-calendar"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Ngày hiệu lực hợp đồng
+        </label>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group date" data-provide="datepicker">
+            <input class="datepicker form-control" id="effectiveDate" name="effectiveDate" type="text" value="@effectiveDate.ToShortDateString()" @(onlyRead ? "readonly" : "") />
+            <div class="input-group-addon">
+                <span class="fa fa-calendar"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Ngày hết hạn hợp đồng
+        </label>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group date" data-provide="datepicker">
+            <input class="datepicker form-control" id="dueDate" name="dueDate" type="text" value="@dueDate.ToShortDateString()" @(onlyRead ? "readonly" : "") />
+            <div class="input-group-addon">
+                <span class="fa fa-calendar"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Nhân viên tư vấn
+        </label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" value="@(Model.consultantOfficerCode != null ? Model.consultantOfficerCode : RDAuthorize.UserId)" name="consultantOfficerCode" class="form-control" @(onlyRead ? "readonly" : "") />
+    </div>
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Tên nhân viên tư vấn
+        </label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" value="@(Model.consultantOfficerCode != null ? Model.consultantOfficerName : RDAuthorize.FullName)" name="consultantOfficerName" class="form-control" disabled />
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            CN nhân viên tư vấn
+        </label>
+    </div>
+    <div class="col-md-4">
+        <select class="form-control" name="consultantBranchCode" @(onlyRead ? "disabled" : "")>
+            @Html.Raw(Html.Action("getListBranch", "Manager", new { area = "InsuranceContract" }))
+        </select>
+    </div>
+    <div id="divNoncifCustomerName" class="col-md-6 @(ExceptCode != "WALK_IN_GUEST" ? "hidden" : "")">
+        <div class="row">
+            <div class="col-md-4 left-label">
+                <label class="pull-right">
+                    Khách vãng lai
+                </label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" value="@Model.noncifCustomerName" name="noncifCustomerName" class="form-control" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-md-2">
+        <div class="custom-control custom-checkbox  pull-right">
+            <input type="checkbox" class="custom-control-input" name="cbExcept" id="cbExcept" @(!String.IsNullOrEmpty(ExceptCode) ? "checked" : "") />
+            <label class="custom-control-label" for="cbExcept"> Ngoại lệ</label>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <select class="form-control" name="exceptTypeCode" TypeCode="@ViewBag.TypeCode" @(!String.IsNullOrEmpty(ExceptCode) ? "" : "disabled")>
+            @if (!String.IsNullOrEmpty(ExceptCode))
+            {
+                @Html.Raw(Html.Action("_getListExceptType", "Manager", new { area = "InsuranceContract", insuranceContractType = TypeCode, selected = ExceptCode }));
+            }
+        </select>
+    </div>
+  
+</div>

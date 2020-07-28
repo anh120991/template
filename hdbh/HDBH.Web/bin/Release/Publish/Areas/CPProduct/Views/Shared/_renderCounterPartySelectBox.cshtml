@@ -1,0 +1,8 @@
+﻿@model List<HDBH.Models.DatabaseModel.CounterPartySelectItemModel>
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+        <option value="@item.counterPartyId" data-cif="@item.cifCounterParty" >@item.counterPartyName</option>
+    }
+}

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<HDBH.Models.ViewModel.SchedulePaymentDetailItemViewModel>
+@{
+    bool isApprove = false;
+    bool isUpdate = false;
+    bool isCreate = false;
+    if (ViewBag.viewMode != null)
+    {
+        isApprove = (ViewBag.viewMode == "APPROVE" || ViewBag.viewMode == "VIEW") ? true : false;
+        isUpdate = (ViewBag.viewMode == "UPDATE") ? true : false;
+        isCreate = ViewBag.viewMode == "CREATE" ? true : false;
+    }
+}
+
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td><input type="text" class="form-control numberinput0" name="productCode" value="@item.productId" @(isUpdate || isApprove ? "disabled" : "") /></td>
+            <td><input type="text" class="form-control numberinput0" name="productName" value="" @(isUpdate || isApprove ? "disabled" : "") /></td>
+            <td><input type="text" class="form-control numberinput0" name="schedulePaymentAmount" value="@item.schedulePaymentAmount" @(isUpdate || isApprove ? "disabled" : "") /></td>
+            <td><input type="text" class="form-control numberinput0" name="scheduleVatAmount" value="@item.scheduleVatAmount" @(isUpdate || isApprove ? "disabled" : "") /></td>
+            <td><input type="text" class="form-control numberinput0" name="scheduleTotalAmount" value="@item.scheduleTotalAmount" @(isUpdate || isApprove ? "disabled" : "") /></td>
+        </tr>
+    }
+    if (ViewBag.viewMode != "APPROVE" || ViewBag.viewMode != "UPDATE")
+    {
+        <tr>
+            <td colspan="2" style="text-align:right;">Tổng cộng</td>
+            <td><input type="text" class="form-control numberinput0" id="schedulePaymentAmount" name="schedulePaymentAmount" value="" @(isUpdate || isApprove ? "disabled" : "") /></td>
+            <td><input type="text" class="form-control numberinput0" id="sumscheduleVatAmount" name="sumscheduleVatAmount" value="" @(isUpdate || isApprove ? "disabled" : "") /></td>
+            <td><input type="text" class="form-control numberinput0" id="sumScheduleTotalAmount" name="sumscheduleTotalAmount" value="" @(isUpdate || isApprove ? "disabled" : "") /></td>
+        </tr>
+    }
+}
+

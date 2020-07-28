@@ -1,0 +1,36 @@
+﻿ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 09:24:04 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 09:29:46 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 10:11:33 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 10:12:16 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 10:18:52 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 10:49:34 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 10:53:13 ((!)) ManagerController => ImportProduct
+System.FormatException: 12/04/2020 12:00:00 SA is not a valid value for Boolean. ---> System.FormatException: String was not recognized as a valid Boolean.
+   at System.Boolean.Parse(String value)
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 69
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 11:33:20 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 13:42:55 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 13:42:58 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 14:02:55 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 14:11:40 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 14:33:26 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 14:37:26 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 14:38:11 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 14:40:51 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 14:41:57 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 15:24:43 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 15:28:24 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 15:47:08 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 17:05:59 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 17:10:41 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 17:19:15 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 17:22:41 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 17:25:18 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 17:27:43 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/10/2020 17:57:38 ((!)) isValid: True

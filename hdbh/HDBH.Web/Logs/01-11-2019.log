@@ -1,0 +1,42 @@
+﻿ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:04:00 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:04:00 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:04:00 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:12:17 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:12:17 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:12:17 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:20:57 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:20:57 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:20:57 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:43:11 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:43:11 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:43:11 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 10:45:42 ((!)) CounterPartyCifService => getCounterPartyByCif
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.String.System.IConvertible.ToInt64(IFormatProvider provider)
+   at System.Convert.ToInt64(Object value)
+   at OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue, Byte[]& int32ByteArray)
+   at OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue)
+   at Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Int32()
+   at Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecWithStoreProcedure(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 136
+   at HDBH.Services.CounterPartyCifService.getCounterPartyByCif(String cif) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyCifService.cs:line 34
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 11:19:09 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 11:19:09 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/01/2019 11:19:09 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain

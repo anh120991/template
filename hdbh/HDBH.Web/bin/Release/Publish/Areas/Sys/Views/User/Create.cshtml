@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+}
+
+
+@section pageTitle {
+    <div class="tabs tabs-style-tzoid">
+        <nav>
+            <ul>
+                <li><a href=""><span class="glyphicon glyphicon-th-list"></span><span>Quản lý danh sách </span></a> </li>
+                <li class="tab-current"><a href="@Url.Action("Create")"><span class="glyphicon glyphicon-plus-sign"></span><span>Tạo mới đối tác</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+}
+<div id="detailForm">
+    <form action="/user/insertUser" id="frm">
+        <div class="col-md-8 offset-2">
+            <fieldset>
+                <legend>Thông tin người dùng</legend>
+
+                <div class="row form-group">
+                    <div class="col-md-2 left-label">
+                        <label class="pull-right">
+                            Mã người dùng
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" value="" name="userName" class="form-control" />
+                    </div>
+                    <div class="col-md-2 left-label">
+                        <label class="pull-right">
+                            Tên người dùng
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" value="" name="fullName" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-2 left-label">
+                        <label class="pull-right">
+                            SDT
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" value="" name="phoneNumber" class="form-control" />
+                    </div>
+                    <div class="col-md-2 left-label">
+                        <label class="pull-right">
+                            Email
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" value="" name="email" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-2 left-label">
+                        <label class="pull-right">
+                            Mã officer
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" value="" name="officerCode" class="form-control" />
+                    </div>
+                    <div class="col-md-2 left-label">
+                        <label class="pull-right">
+                            Chi nhánh
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <select name="userBranchCode" class="form-control">
+                            @Html.Raw(Html.Action("getListBranch", "Manager", new { area = "InsuranceContract" }))
+                        </select>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <fieldset>
+                    <legend>Vai trò</legend>
+                    @Html.Raw(Html.Action("_getListRole", "Role", new { area = "Sys" }))
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 offset-10">
+                <button type="submit" class="btn btn-primary">Thêm</button>
+            </div>
+        </div>
+    </form>
+  
+
+</div>
+
+
+
+
+
+
+@section scripts {
+    <script src="~/Scripts/User/user.js"></script>
+    <script>
+        user.Init();
+    </script>
+}

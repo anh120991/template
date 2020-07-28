@@ -1,0 +1,248 @@
+﻿ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 09:35:28 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 09:35:28 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 09:38:09 ((!)) CounterPartyListService => searchCounterPartyList
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "CONTRACTMAN.PKG_HDBH" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "CONTRACTMAN.PKG_HDBH"
+ORA-06512: at line 1
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecWithStoreProcedure(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 136
+   at HDBH.Services.CounterPartyListService.searchCounterPartyList(DateTime fromDate, DateTime toDate, Nullable`1 isInau, String counterPartyType, String cifCounterParty, String counterPartyName, String bancasRepresentative, String status, Int32 pageNumber, Int32 pageSize, Int32& totalNumber) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyListService.cs:line 47
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 09:51:10 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 09:51:10 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 09:54:19 ((!)) CounterPartyListService => searchCounterPartyList
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "CONTRACTMAN.PKG_HDBH" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "CONTRACTMAN.PKG_HDBH"
+ORA-06512: at line 1
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecWithStoreProcedure(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 136
+   at HDBH.Services.CounterPartyListService.searchCounterPartyList(DateTime fromDate, DateTime toDate, Nullable`1 isInau, String counterPartyType, String cifCounterParty, String counterPartyName, String bancasRepresentative, String status, Int32 pageNumber, Int32 pageSize, Int32& totalNumber) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyListService.cs:line 45
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 10:01:10 ((!)) CounterPartyListService => searchCounterPartyList
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00904: "P_ISINAU": invalid identifier
+ORA-06512: at "CONTRACTMAN.PKG_HDBH", line 1289
+ORA-06512: at line 1
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecWithStoreProcedure(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 136
+   at HDBH.Services.CounterPartyListService.searchCounterPartyList(DateTime fromDate, DateTime toDate, Nullable`1 isInau, String counterPartyType, String cifCounterParty, String counterPartyName, String bancasRepresentative, String status, Int32 pageNumber, Int32 pageSize, Int32& totalNumber) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyListService.cs:line 45
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 10:04:16 ((!)) CounterPartyListService => searchCounterPartyList
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00904: "P_ISINAU": invalid identifier
+ORA-06512: at "CONTRACTMAN.PKG_HDBH", line 1289
+ORA-06512: at line 1
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecWithStoreProcedure(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 136
+   at HDBH.Services.CounterPartyListService.searchCounterPartyList(DateTime fromDate, DateTime toDate, Nullable`1 isInau, String counterPartyType, String cifCounterParty, String counterPartyName, String bancasRepresentative, String status, Int32 pageNumber, Int32 pageSize, Int32& totalNumber) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyListService.cs:line 45
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 11:36:11 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 11:36:11 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 14:16:28 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 14:16:28 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 14:53:11 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 14:53:11 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 14:54:02 ((!)) CounterPartyCifService => getCounterPartyByCif
+System.InvalidOperationException: Cannot create a DbSet for 'CounterPartyCifModel' because this type is not included in the model for the context.
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.FromSql[TEntity](IQueryable`1 source, RawSqlString sql, Object[] parameters)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecWithStoreProcedure(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 136
+   at HDBH.Services.CounterPartyCifService.getCounterPartyByCif(String cif) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyCifService.cs:line 34
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 14:56:15 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 14:56:15 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 16:51:35 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 16:51:35 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 17:08:20 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 17:08:20 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 17:26:32 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 17:26:32 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 17:54:15 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 17:54:15 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 17:57:50 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 17:57:50 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 17:59:00 ((!)) CounterPartyService => InsertCounterParty
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'SP_GET_COUNTERPARTY_LIST'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, IEnumerable`1 parameters)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, Object[] parameters)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecuteReturnAction(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 208
+   at HDBH.Services.CounterPartyService.InsertCounterParty(String cifCounterParty, String counterPartyName, String counterPartyType, String bancasRepresentative1, String representativePhone1, String bancasRepresentative2, String representativePhone2, String signedContractDate, String paymentAccount, String decription, String userId, String productList, String fileList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 71
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 17:59:38 ((!)) CounterPartyService => InsertCounterParty
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'SP_GET_COUNTERPARTY_LIST'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, IEnumerable`1 parameters)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, Object[] parameters)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecuteReturnAction(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 208
+   at HDBH.Services.CounterPartyService.InsertCounterParty(String cifCounterParty, String counterPartyName, String counterPartyType, String bancasRepresentative1, String representativePhone1, String bancasRepresentative2, String representativePhone2, String signedContractDate, String paymentAccount, String decription, String userId, String productList, String fileList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 71
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:03:08 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:03:08 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:04:25 ((!)) CounterPartyService => InsertCounterParty
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'SP_GET_COUNTERPARTY_LIST'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, IEnumerable`1 parameters)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, Object[] parameters)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecuteReturnAction(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 208
+   at HDBH.Services.CounterPartyService.InsertCounterParty(String cifCounterParty, String counterPartyName, String counterPartyType, String bancasRepresentative1, String representativePhone1, String bancasRepresentative2, String representativePhone2, String signedContractDate, String paymentAccount, String decription, String userId, String productList, String fileList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 71
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:06:35 ((!)) CounterPartyService => InsertCounterParty
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'SP_GET_COUNTERPARTY_LIST'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, IEnumerable`1 parameters)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, Object[] parameters)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecuteReturnAction(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 208
+   at HDBH.Services.CounterPartyService.InsertCounterParty(String cifCounterParty, String counterPartyName, String counterPartyType, String bancasRepresentative1, String representativePhone1, String bancasRepresentative2, String representativePhone2, String signedContractDate, String paymentAccount, String decription, String userId, String productList, String fileList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 71
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:07:01 ((!)) CounterPartyCifService => getCounterPartyByCif
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.String.System.IConvertible.ToInt64(IFormatProvider provider)
+   at System.Convert.ToInt64(Object value)
+   at OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue, Byte[]& int32ByteArray)
+   at OracleInternal.ServiceObjects.OracleParameterImpl.SetInt32DataInBytes(Object paramValue)
+   at Oracle.ManagedDataAccess.Client.OracleParameter.PreBind_Int32()
+   at Oracle.ManagedDataAccess.Client.OracleParameter.PreBind(OracleConnectionImpl connImpl, ColumnDescribeInfo cachedParamMetadata, Boolean& bMetadataModified, Int32 arrayBindCount, ColumnDescribeInfo& paramMetaData, Object& paramValue, Boolean isEFSelectStatement, SqlStatementType stmtType)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.InitializeParamInfo(ICollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ProcessParameters(OracleParameterCollection paramColl, OracleConnectionImpl connectionImpl, ColumnDescribeInfo[] cachedParamMetadata, Boolean& bBindMetadataModified, Boolean isEFSelectStatement, MarshalBindParameterValueHelper& marshalBindValuesHelper)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecWithStoreProcedure(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 136
+   at HDBH.Services.CounterPartyCifService.getCounterPartyByCif(String cif) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyCifService.cs:line 34
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:09:33 ((!)) CounterPartyService => InsertCounterParty
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'SP_GET_COUNTERPARTY_LIST'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, IEnumerable`1 parameters)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, Object[] parameters)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecuteReturnAction(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 208
+   at HDBH.Services.CounterPartyService.InsertCounterParty(String cifCounterParty, String counterPartyName, String counterPartyType, String bancasRepresentative1, String representativePhone1, String bancasRepresentative2, String representativePhone2, String signedContractDate, String paymentAccount, String decription, String userId, String productList, String fileList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 71
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:10:26 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:10:26 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:17:02 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:17:02 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:19:00 ((!)) CounterPartyService => InsertCounterParty
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecuteReturnAction(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 211
+   at HDBH.Services.CounterPartyService.InsertCounterParty(String cifCounterParty, String counterPartyName, String counterPartyType, String bancasRepresentative1, String representativePhone1, String bancasRepresentative2, String representativePhone2, String signedContractDate, String paymentAccount, String decription, String userId, String productList, String fileList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 72
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:19:32 ((!)) CounterPartyService => InsertCounterParty
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecuteReturnAction(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 211
+   at HDBH.Services.CounterPartyService.InsertCounterParty(String cifCounterParty, String counterPartyName, String counterPartyType, String bancasRepresentative1, String representativePhone1, String bancasRepresentative2, String representativePhone2, String signedContractDate, String paymentAccount, String decription, String userId, String productList, String fileList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 72
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:20:59 ((!)) CounterPartyService => InsertCounterParty
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecuteReturnAction(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 211
+   at HDBH.Services.CounterPartyService.InsertCounterParty(String cifCounterParty, String counterPartyName, String counterPartyType, String bancasRepresentative1, String representativePhone1, String bancasRepresentative2, String representativePhone2, String signedContractDate, String paymentAccount, String decription, String userId, String productList, String fileList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 72
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:22:16 ((!)) CounterPartyService => InsertCounterParty
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecuteReturnAction(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 211
+   at HDBH.Services.CounterPartyService.InsertCounterParty(String cifCounterParty, String counterPartyName, String counterPartyType, String bancasRepresentative1, String representativePhone1, String bancasRepresentative2, String representativePhone2, String signedContractDate, String paymentAccount, String decription, String userId, String productList, String fileList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 72
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/14/2019 18:23:03 ((!)) CounterPartyService => InsertCounterParty
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecuteReturnAction(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 211
+   at HDBH.Services.CounterPartyService.InsertCounterParty(String cifCounterParty, String counterPartyName, String counterPartyType, String bancasRepresentative1, String representativePhone1, String bancasRepresentative2, String representativePhone2, String signedContractDate, String paymentAccount, String decription, String userId, String productList, String fileList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 72

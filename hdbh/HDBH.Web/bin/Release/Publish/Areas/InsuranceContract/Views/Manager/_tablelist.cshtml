@@ -1,0 +1,53 @@
+﻿@{
+    var isInau = 0;
+    if (ViewBag.isInau != null && ViewBag.isInau != 0)
+    {
+        isInau = ViewBag.isInau;
+    }
+}
+@if (isInau != 1)
+{
+    <div class="table-responsive">
+        <table id="tblist_Insurance" class="list-table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th scope="col">Chọn</th>
+                    <th scope="col">Số HĐBH</th>
+                    <th scope="col">Khách hàng</th>
+                    <th scope="col">Giá trị HĐ<br />(VNĐ)</th>
+                    <th scope="col">Ngày hiệu lực</th>
+                    <th scope="col">Ngày hết hiệu lực</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Đến hạn tái tục</th>
+                    <th scope="col">Người cập nhật</th>
+                    <th scope="col">Ngày cập nhật</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+}
+else if (isInau == 1)
+{
+    <div class="table-responsive">
+        <table id="tblist_Insurance" class="list-table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th scope="col">Chọn</th>
+                    <th scope="col">Số HĐBH</th>
+                    <th scope="col">Khách hàng</th>
+                    <th scope="col">Hình thức HĐ</th>
+                    <th scope="col">Giá trị HĐ<br />(VNĐ)</th>
+                    <th scope="col">Ngày hiệu lực</th>
+                    <th scope="col">Ngày hết hiệu lực</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Người cập nhật</th>
+                    <th scope="col">Ngày cập nhật</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+}

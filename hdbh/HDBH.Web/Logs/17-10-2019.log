@@ -1,0 +1,121 @@
+﻿ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 09:36:26 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 09:36:26 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 09:49:49 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 09:49:49 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 09:50:21 ((!)) NonlifeInsuranceDetailService => getInsuranceDetail
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
+   at HDBH.Services.NonlifeInsuranceDetailService.getInsuranceDetail(String p_insuranceContractNo) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\NonLifeInsurance\NonlifeInsuranceDetailService.cs:line 76
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 10:13:12 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 10:13:12 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 10:13:47 ((!)) NonlifeInsuranceDetailService => getInsuranceDetail
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at HDBH.Services.NonlifeInsuranceDetailService.getInsuranceDetail(String p_insuranceContractNo) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\NonLifeInsurance\NonlifeInsuranceDetailService.cs:line 76
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 10:23:49 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 10:23:49 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 10:29:29 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 10:29:29 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 10:52:06 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 10:52:07 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 14:10:19 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 14:10:19 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 14:17:08 ((!)) NonlifeInsuranceDetailService => getInsuranceDetail
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 16-10-2019. Path '[0].PAYMENTDATE', line 11, position 31.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at HDBH.Services.NonlifeInsuranceDetailService.getInsuranceDetail(String p_insuranceContractNo) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\NonLifeInsurance\NonlifeInsuranceDetailService.cs:line 65
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 14:18:09 ((!)) NonlifeInsuranceDetailService => getInsuranceDetail
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 16-10-2019. Path '[0].PAYMENTDATE', line 11, position 31.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at HDBH.Services.NonlifeInsuranceDetailService.getInsuranceDetail(String p_insuranceContractNo) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\NonLifeInsurance\NonlifeInsuranceDetailService.cs:line 65
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 14:19:17 ((!)) NonlifeInsuranceDetailService => getInsuranceDetail
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 16-10-2019. Path '[0].PAYMENTDATE', line 11, position 31.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at HDBH.Services.NonlifeInsuranceDetailService.getInsuranceDetail(String p_insuranceContractNo) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\NonLifeInsurance\NonlifeInsuranceDetailService.cs:line 65
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 14:20:32 ((!)) NonlifeInsuranceDetailService => getInsuranceDetail
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 16-10-2019. Path '[0].PAYMENTDATE', line 11, position 31.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at HDBH.Services.NonlifeInsuranceDetailService.getInsuranceDetail(String p_insuranceContractNo) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\NonLifeInsurance\NonlifeInsuranceDetailService.cs:line 65
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 14:21:20 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 14:21:20 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:00:21 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:00:21 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:00:21 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:01:41 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:01:41 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:01:41 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:07:45 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:07:45 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:07:45 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:40:04 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:40:04 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 16:40:04 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 17:08:41 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 17:08:41 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 17:08:41 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 17:16:46 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 17:16:47 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/17/2019 17:16:47 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain

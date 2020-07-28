@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lang>
+
+
+  <item id="LBL_USERNAME">Tài khoản</item>
+  <item id="LBL_PASSWORD">Mật khẩu</item>
+  <item id="LBL_coppyRigh"> Bản quyền 2019 Ngân Hàng Phương Đông - Thiết kế và phát triển bởi Phòng QL &amp; PTUD ngân hàng OCB</item>
+
+  <item id="lbl_STT">STT</item>
+  <item id="lbl_User">Người dùng</item>
+  <item id="lbl_IsHO">Is_HO</item>
+  <item id="lbl_IsKSV">IS_KSV</item>
+  <item id="lbl_IsRm">IS_RM</item>
+  <item id="lbl_Admin">ADMIN</item>
+  <item id="lbl_TSDB">TSDB</item>
+  <item id="lbl_HDBH">HDBH</item>
+  <item id="lbl_HDBHSME">HDBHSME</item>
+</lang>

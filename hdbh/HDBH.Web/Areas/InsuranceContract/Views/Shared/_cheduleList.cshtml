@@ -1,0 +1,44 @@
+﻿@model IEnumerable<HDBH.Models.ViewModel.ScheduleListViewModel>
+
+@if (Model != null)
+{
+    int index = 0;
+    foreach (var item in Model)
+    {
+
+        <tr class="bg-title" name="trSchedule" data-index="@(index)">
+            <td>Kỳ thanh toán:</td>
+            <td colspan="4">
+                @item.scheduleQuanlity
+
+                <input type="hidden" value="@item.scheduleId" name="scheduleId" />
+                <input type="hidden" value="@item.scheduleDate.ToShortDateString()" name="scheduleDate" />
+            </td>
+
+        </tr>
+        <tr class="bg-title">
+            <td>Ngày thanh toán dự kiến:</td>
+            <td colspan="4">@item.scheduleDate.ToShortDateString()</td>
+        </tr>
+        if (item.productList != null && item.productList.Any())
+        {
+            foreach (var product in item.productList)
+            {
+
+                <tr name="rowData">
+
+                    <td class="td-title">
+                        @product.productCode
+                        <input type="hidden" name="scheduleId" value="@item.scheduleId" />
+                        <input type="hidden" name="productId" value="@product.productId" />
+                    </td>
+                    <td class="td-title">@product.productName</td>
+                    <td class=""><input type="text" class="form-control numberinput0 changeValue" name="schedulePaymentAmount" value="@product.schedulePaymentAmount" /> </td>
+                    <td class=""><input type="text" class="form-control numberinput0 changeValue" name="scheduleVatAmount" value="@product.scheduleVatAmount" /> </td>
+                    <td class=""><input type="text" class="form-control numberinput0" name="scheduleTotalAmount" value="@product.scheduleTotalAmount" disabled /></td>
+                </tr>
+            }
+        }
+        index++;
+    }
+}

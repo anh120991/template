@@ -1,0 +1,11 @@
+﻿@model List<HDBH.Models.DatabaseModel.CounterPartySelectItemModel>
+@{ 
+    int selected = ViewBag.Selected != null ? int.Parse(ViewBag.Selected.ToString()) : 0;
+}
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+        <option paymentAccount="@item.paymentAccount" value="@item.counterPartyId" @(item.counterPartyId == selected ? "selected" : "")>@item.counterPartyName</option>
+    }
+}

@@ -1,0 +1,17 @@
+D:\WorkSpace\debug\backup\HDBH_New\HDBH.Models\bin\Debug\HDBH.Models.dll
+D:\WorkSpace\debug\backup\HDBH_New\HDBH.Models\bin\Debug\HDBH.Models.pdb
+D:\WorkSpace\debug\backup\HDBH_New\HDBH.Models\obj\Debug\HDBH.Models.csproj.CoreCompileInputs.cache
+D:\WorkSpace\debug\backup\HDBH_New\HDBH.Models\obj\Debug\HDBH.Models.dll
+D:\WorkSpace\debug\backup\HDBH_New\HDBH.Models\obj\Debug\HDBH.Models.pdb
+D:\WorkSpace\HDBH\HDBH\Trunk\SourceCode\dotNET\HDBH.Models\bin\Debug\HDBH.Models.dll
+D:\WorkSpace\HDBH\HDBH\Trunk\SourceCode\dotNET\HDBH.Models\bin\Debug\HDBH.Models.pdb
+D:\WorkSpace\HDBH\HDBH\Trunk\SourceCode\dotNET\HDBH.Models\obj\Debug\HDBH.Models.csproj.CoreCompileInputs.cache
+D:\WorkSpace\HDBH\HDBH\Trunk\SourceCode\dotNET\HDBH.Models\obj\Debug\HDBH.Models.dll
+D:\WorkSpace\HDBH\HDBH\Trunk\SourceCode\dotNET\HDBH.Models\obj\Debug\HDBH.Models.pdb
+D:\WorkSpace\HDBH\HDBH\Trunk\SourceCode\dotNET\HDBH.Models\obj\Debug\HDBH.Models.csprojAssemblyReference.cache
+D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Models\bin\Debug\HDBH.Models.dll
+D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Models\bin\Debug\HDBH.Models.pdb
+D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Models\obj\Debug\HDBH.Models.csproj.CoreCompileInputs.cache
+D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Models\obj\Debug\HDBH.Models.dll
+D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Models\obj\Debug\HDBH.Models.pdb
+D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Models\obj\Debug\HDBH.Models.csprojAssemblyReference.cache

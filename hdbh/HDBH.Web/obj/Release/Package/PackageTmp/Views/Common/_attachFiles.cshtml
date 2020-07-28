@@ -1,0 +1,78 @@
+﻿@model List<HDBH.Models.ViewModel.AttachmentViewModel>
+
+@functions  {
+
+
+}
+<form id="uploader" class="fileContainer">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box">
+                <input id="fileInput" type="file" multiple name="file-1[]" class="inputfile inputfile-1" data-multiple-caption="{count} tập tin được chọn" style="display: none;">
+                <label for="fileInput"><i class="fa fa-hand-o-right" aria-hidden="true"></i> <span>Bấm chọn file&hellip;</span></label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <input type="submit" value="Tải lên" class="btn btn-success" />
+        </div>
+    </div>
+    <div class="row">
+        <pre id="filelist" style="display:none;"></pre>
+    </div>
+</form>
+<div class="mt-3">
+    <h4>Tập tin được tải lên</h4>
+    <table id="attactment-table" class="mt-3 ml-5">
+        <tbody>
+
+            <tr id="trAttactmentTemplate" style="display: none;">
+                <td width="10%">
+                    <i name="attachIco" class="fa fa-file-word-o" aria-hidden="true"></i>
+                </td>
+                <td><span name="fileItem" href="" fileId="0">abc</span></td>
+                <td width="10%">
+                    <a name="btnDownloadFile" title="Tải tập tin"><i class="fa fa-download" aria-hidden="true"></i></a>
+                </td>
+                <td width="10%">
+                    <a name="btnRemoveFile"><i class="fa fa-trash-o" aria-hidden="true" style="font-size: 18px;"></i></a>
+                </td>
+            </tr>
+
+
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr name="atm">
+                        <td width="10%">
+                            @{
+                                string extention = HDBH.Lib.Library.getExtentionFile(item.fileName);
+                                string classico = string.Empty;
+                                string href = "/Common/DownloadFile?url=" + item.filePath + "&fileName=" + item.fileName;
+                                switch (extention)
+                                {
+                                    case "xlsx": classico = "fa fa-file-excel-o"; break;
+                                    case "docx": classico = "fa fa-file-word-o"; break;
+                                    case "pdf": classico = "fa fa-file-pdf-o"; break;
+                                    case "txt": classico = "fa fa-file-text"; break;
+                                    case "jpg": classico = "fa fa-picture-o"; break;
+                                    case "png": classico = "fa fa-picture-o"; break;
+                                    default:  classico = "fa fa-file"; break;
+                                }
+                                            }
+
+                            <i name="attachIco" class="@classico" aria-hidden="true"></i>
+                        </td>
+                        <td><span name="fileItem" fileId="@item.fileId" fileAutoId="@item.fileAutoId">@item.fileName</span></td>
+                        <td width="10%">
+                            <a name="btnDownloadFile" title="Tải tập tin" href="@href"><i class="fa fa-download" aria-hidden="true"></i></a>
+                        </td>
+                        <td width="10%">
+                            <a name="btnRemoveFile" filePath="@item.filePath"><i class="fa fa-trash-o" aria-hidden="true" style="font-size: 18px;"></i></a>
+                        </td>
+                    </tr>
+                }
+                                }
+        </tbody>
+    </table>
+</div>

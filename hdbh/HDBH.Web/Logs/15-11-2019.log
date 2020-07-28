@@ -1,0 +1,74 @@
+﻿ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 09:32:58 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 09:33:31 ((!)) Permission => /counterparty/counterpartymanager/detail
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 09:36:40 ((!)) Permission => /nonlifeinsurance/contract/detail
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 09:37:17 ((!)) Permission => //common/downloadfile
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 09:38:17 ((!)) Permission => /awardmanage/recipient/detail
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 09:39:08 ((!)) Permission => /nonlifeinsurance/contract/exportnonlifecontractlist
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 09:44:56 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 10:05:19 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 10:06:26 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 10:21:20 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 10:21:21 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 10:53:12 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 10:53:34 ((!)) NonlifeInsuranceDetailService => getInsuranceDetail => convert NonLifeInsuranceDetailModel
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 30/11/2019. Path '[0].DUEDATE', line 29, position 27.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at HDBH.Services.NonlifeInsuranceDetailService.getInsuranceDetail(String p_insuranceContractNo) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\NonLifeInsurance\NonlifeInsuranceDetailService.cs:line 57
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 10:55:37 ((!)) NonlifeInsuranceDetailService => getInsuranceDetail => convert NonLifeInsuranceDetailModel
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 30/11/2019. Path '[0].DUEDATE', line 29, position 27.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at HDBH.Services.NonlifeInsuranceDetailService.getInsuranceDetail(String p_insuranceContractNo) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\NonLifeInsurance\NonlifeInsuranceDetailService.cs:line 57
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 10:56:50 ((!)) NonlifeInsuranceDetailService => getInsuranceDetail => convert NonLifeInsuranceDetailModel
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 30/11/2019. Path '[0].DUEDATE', line 29, position 27.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at HDBH.Services.NonlifeInsuranceDetailService.getInsuranceDetail(String p_insuranceContractNo) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\NonLifeInsurance\NonlifeInsuranceDetailService.cs:line 57
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 10:57:49 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 11:01:06 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 11:04:09 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 11:38:46 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/15/2019 11:44:53 ((!)) isValid: True

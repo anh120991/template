@@ -1,0 +1,307 @@
+﻿@model HDBH.Models.ViewModel.InsuranceContractViewModel
+@{
+    ViewBag.Title = "Index";
+    bool isView = false;
+    bool isApprove = false;
+    int ApproveLevel = 0;
+    if (Model != null)
+    {
+        isView = Model.viewMode != null && Model.viewMode == HDBH.Models.Constant.ViewModeCons.VIEW ? true : false;
+        isApprove = Model.viewMode != null && Model.viewMode == HDBH.Models.Constant.ViewModeCons.APPROVE ? true : false;
+    }
+
+    if (ViewBag.ApproveLevel != 0)
+    {
+        if (ViewBag.ApproveLevel == 1)
+        {
+            ApproveLevel = 1;
+        }
+        else if (ViewBag.ApproveLevel == 2)
+        {
+            ApproveLevel = 2;
+        }
+
+    }
+
+
+    var fileList = ViewBag.fileList != null ? (List<HDBH.Models.ViewModel.AttachmentViewModel>)ViewBag.fileList : new List<HDBH.Models.ViewModel.AttachmentViewModel>();
+
+    var TypeCode = ViewBag.TypeCode;
+}
+
+<style>
+    .actionProduct {
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .bg-title {
+        background: #f0f0f0;
+        font-weight: bold;
+    }
+
+    .td-title {
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+
+@section pageTitle {
+    @*<div class="tabs tabs-style-tzoid">
+            <nav>
+                <ul>
+                    <li><a href="@(isApprove ? Url.Action("Inau") :  Url.Action("Index"))"><span class="glyphicon glyphicon-th-list"></span><span>Quản lý danh sách </span></a> </li>
+                    <li class="tab-current"><a href="@Url.Action("Create")"><span class="glyphicon glyphicon-plus-sign"></span><span>Tạo mới đối tác</span></a></li>
+                </ul>
+            </nav>
+        </div>*@
+
+}
+<div id="detailForm">
+
+
+    <div class="col-md-12">
+        <ul class="nav nav-tabs custom-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="main-tab" data-toggle="tab" href="#mainTab" role="tab" aria-controls="mainTab" aria-selected="true">Thông tin chung</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="schedule-tab" data-toggle="tab" href="#schedule" role="tab" aria-controls="schedule" aria-selected="false">Kỳ thanh toán</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="file-tab" data-toggle="tab" href="#fileTab" role="tab" aria-controls="fileTab" aria-selected="false">Đính kèm file</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <input type="hidden" id="insuranceId" name="insuranceId" value="@Model.insuranceId" />
+            <input type="hidden" id="exceptionTypeCode" name="exceptionTypeCode" value="@Model.exceptionTypeCode" />
+            <input type="hidden" id="mode" name="mode" value="@Model.viewMode" />
+            <div class="tab-pane fade show active" id="mainTab" role="tabpanel" aria-labelledby="home-tab">
+                <div class="mt-5">
+                    <fieldset>
+                        <legend> Thông tin đối tác liên kết</legend>
+                        <form id="frm" action="/CPProduct/Manager/Insert">
+                            @Html.Partial("~/Areas/InsuranceContract/Views/Shared/_detailForm.cshtml")
+                        </form>
+                    </fieldset>
+                    @if (!string.IsNullOrEmpty(TypeCode) && TypeCode == "COLLATERAL")
+                    {
+                        <div class="collateralList">
+                            <fieldset class="mt-5">
+                                <legend> Thông tin tài sản</legend>
+                                <div class="">
+                                    <div class="row">
+                                        <div class="col-md-10 offset-1">
+                                            <div class="row mt-2">
+                                                <table id="tblCollateralList" class="list-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Mã tài sản</th>
+                                                            <th>Loại tài sản</th>
+                                                            <th>Giá trị định giá</th>
+
+                                                            <th>Giá trị tài sản</th>
+                                                            <th>Chi nhánh quản lý tài sản</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @Html.Partial("~/Areas/InsuranceContract/Views/Shared/_templateCollateralItem.cshtml", Model.collateralList)
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+                        </div>
+
+                    }
+
+                    <fieldset class="mt-5">
+                        <legend> Thông tin sản phẩm</legend>
+                        <p>Anh/chị vui lòng kiểm tra/điều chỉnh đảm bảo tổng tỷ lẹ đồng bảo hiểm các đối tác bảo hiểm là 100%</p>
+                        <div class="">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row mt-2">
+                                        <table id="tblProduct" class="list-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Đối tác liên kết</th>
+                                                    <th>TK chuyên thu</th>
+                                                    <th>Công ty/CN trực thuộc </th>
+
+                                                    <th>Mã sản phẩm</th>
+                                                    <th>Tên sản phẩm</th>
+                                                    <th>Tỷ lệ đồng bảo hiểm</th>
+                                                    <th>Phí bảo hiểm chưa VAT</th>
+                                                    <th>Tiền VAT</th>
+                                                    <th>Tiền phí BH sau VAT</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @Html.Partial("~/Areas/InsuranceContract/Views/Shared/_templateProductImport.cshtml", Model.productList)
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        <label class="pull-right">Ghi chú</label>
+                    </div>
+                    <div class="col-md-8">
+                        <textarea name="contractDescription" class="form-control" disabled>@Model.contractDescription</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+                <div class="mt-5">
+                    <div class="row">
+                        <div class="col-md-10 offset-1">
+                            <fieldset>
+                                <legend>Điều kiện tính kỳ thanh toán</legend>
+                                <div class="row form-group">
+                                    <div class="col-md-2">
+                                        Số lượng kỳ thanh toán
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input name="txtScheduleTerm" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        Ngày thanh toán đầu tiên
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="input-group date" data-provide="datepicker">
+                                            <input class="datepicker form-control" id="dtpStartDate" name="dtpStartDate" type="text" value="@DateTime.Now.ToShortDateString()" />
+                                            <div class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row  form-group">
+                                    <div class="col-md-2">
+                                        Kỳ hạn thanh toán (tháng)
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input name="txtScheduleQuanlity" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-10 offset-1">
+                                        <table id="tbProductSchedule" class="list-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Mã sản phẩm</th>
+                                                    <th>Tên sản phẩm</th>
+                                                    <th>Tổng tiền thanh toán chưa VAT</th>
+                                                    <th>% VAT</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="template_ProductSchedule" class="hidden">
+                                                    <td name="productCode" disabled></td>
+                                                    <td name="productName" disabled></td>
+                                                    <td name="tbfeeAmount">
+                                                        <input type="text" class="form-control numberinput2" />
+                                                    </td>
+                                                    <td name="tbVATPercent">
+                                                        <input type="text" class="form-control" />
+                                                    </td>
+                                                    <input type="hidden" name="tbVatAmount" />
+                                                    <input type="hidden" name="productId" />
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="row form-group mt-4 pull-right">
+                                            <button id="btnReloadProductList" class="btn btn-success">Load bảng sản phẩm</button>
+                                            <button id="btnCalscheduleId" class="btn btn-primary">Tính kỳ thanh toán</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="mt-4">
+                                <legend>Bảng tính kỳ thanh toán</legend>
+                                <p>Anh/Chị vui lòng kiểm tra/điều chỉnh (nếu có) các thông tin (phí bảo hiểm, ngày thanh toán phí...) khớp với nội dungg trên hợp đồng bảo hiểm.</p>
+                                <table id="tbScheduleList" class="list-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã sản phẩm</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Tiền thanh toán chưa VAT</th>
+                                            <th>Tiền VAT</th>
+                                            <th>Tiền thanh toán sau VAT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @Html.Raw(ViewBag.strScheDuleTable != null ? ViewBag.strScheDuleTable : "")
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="fileTab" role="tabpanel" aria-labelledby="file-tab">
+                <div class="mt-5">
+                    <div class="row">
+                        <div class="col-md-8 offset-2">
+                            @Html.Partial("~/Views/Common/_attachFiles.cshtml", fileList)
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @if (isApprove)
+        {
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="pull-right"> Nội dung duyệt (*)</label>
+                </div>
+                <div class="col-md-8">
+                    <textarea class="form-control" id="approveContent" name="approveContent"></textarea>
+                </div>
+            </div>
+        }
+
+
+        <div class="row mt-5">
+            <div class="right-control pull-right">
+                <a href="@Url.Action("index")" class="btn btn-warning">Thoát</a>
+                @if (isApprove)
+                {
+                    @*<button class="btn btn-warning" id="btnSkip" pApproveLevel="@ApproveLevel">Thoát</button>*@
+                    <button class="btn btn-danger" id="btnApprove" pApproveLevel="@ApproveLevel" approveStatus="REJ"><i class="fa fa-ban"></i> Từ chối</button>
+                    <button class="btn btn-warning" id="btnReqEdit" approveStatus="REQEDIT">Yêu cầu chỉnh sửa</button>
+                    <button class="btn btn-primary" id="btnApprove" pApproveLevel="@ApproveLevel">Duyệt</button>
+                }
+                else if (!isApprove)
+                {
+                    @*<button class="btn btn-warning" id="btnSkip" pApproveLevel="@ApproveLevel">Thoát</button>*@
+                }
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+@section scripts {
+    <script src="~/Scripts/InsuranceContract/insuranceAction.js"></script>
+}

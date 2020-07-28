@@ -1,0 +1,145 @@
+﻿@using HDBH.Models.DatabaseModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+</style>
+
+@section pageTitle {
+    <div class="tabs tabs-style-tzoid">
+        <nav>
+            <ul>
+                <li class="tab-current"><a><span class="glyphicon glyphicon-th-list"></span><span>Danh sách người dùng</span></a> </li>
+                <li><a><span class="glyphicon glyphicon-plus-sign"></span><span>Tạo mới người dùng</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    @*@Html.Partial("~/Views/Home/_renderSiteMap.cshtml", lsSiteMap)*@
+}
+<div id="rootList">
+    <input hidden value="@RDAuthorize.UserId" id="userId" name="userId" />
+    <input hidden value="" id="contractFormCode" name="contractFormCode" />
+    @*<form id="frmSearch">*@
+    <div class="col-md-12">
+        <form id="frmSearch">
+            <fieldset class="">
+                <div class="row form-group">
+                    <div class="col-md-2 left-label">
+                        <label class="">
+                            Mã người dùng
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="userName" name="userName" />
+                    </div>
+
+                    <div class="col-md-2 left-label">
+                        <label class="">
+                            Tên người dùng
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="fullName" name="fullName" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-2 left-label">
+                        <label class="">
+                            Chi nhánh
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <select name="branchCode" class="form-control">
+                            @Html.Raw(Html.Action("getListBranch", "Manager", new { area = "InsuranceContract" }))
+                        </select>
+                    </div>
+
+                    <div class="col-md-2 left-label">
+                        <label class="">
+                            Trạng thái kích hoạt
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <select name="isActive" class="form-control">
+                            <option value="-1">Tất cả</option>
+                            <option value="0">Không kích hoạt</option>
+                            <option value="1">Kích hoạt</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-4 offset-8">
+                        <button type="button" id="btnSearch" name="btnSearch" class="btn btn-primary"><i class="fa fa-search"></i> Tìm kiếm</button>
+                        <button type="button" id="btnExport" name="btnExport" class="btn btn-success"><i class="fa fa-file-excel-o"></i> Xuất Excel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <div class="row col-md"></div>
+        <div class="row">
+            <div class="col-md-2">
+                <button type="button" id="btnAdd" name="btnAdd" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Thêm mới</button>
+            </div>
+
+            <div class="col-md-2">
+                <div class="fileUpload">
+                    <input type="file" class="upload" name="btnImportUser" id="btnImportUser" />
+                    <span><i class="fa fa-upload" aria-hidden="true"></i>  Import DS User</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="fileUpload">
+                    <input type="file" class="upload" name="btnImportRole" id="btnImportRole" />
+                    <span><i class="fa fa-upload" aria-hidden="true"></i>  Import DS Phân quyền</span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div id="gridUser">
+                    <div class="table-responsive">
+                        <table id="tbUserList" class="list-table" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Mã người dùng</th>
+                                    <th scope="col">Tên người dùng</th>
+                                    <th scope="col">Mã officer</th>
+                                    <th scope="col">Chi nhánh</th>
+                                    <th scope="col">Kích hoạt</th>
+                                    <th scope="col">Hủy</th>
+                                    <th scope="col">Người cập nhật</th>
+                                    <th scope="col">Ngày cập nhật</th>
+                                    <th scope="col">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 offset-2">
+                <a href="/Content/template/templateImportUserList.xlsx" target="_blank" class="pull-right"><i class="fa fa-download" aria-hidden="true"></i> Template DS User</a>
+            </div>
+            <div class="col-md-2">
+                <a href="/Content/template/templateImportUserRole.xlsx" target="_blank" class="pull-right"><i class="fa fa-download" aria-hidden="true"></i> Template DS phân quyền</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script src="~/Scripts/User/UserList.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            userList.Init();
+        });
+    </script>
+}

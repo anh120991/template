@@ -1,0 +1,57 @@
+﻿@model HDBH.Models.ViewModel.Payment.PaymentViewDetailModel
+@{
+    bool isApprove = false;
+    bool isUpdate = false;
+    bool isCreate = false;
+    if (ViewBag.viewMode != null)
+    {
+        isApprove = (ViewBag.viewMode == "APPROVE" || ViewBag.viewMode == "VIEW") ? true : false;
+        isUpdate = (ViewBag.viewMode == "UPDATE") ? true : false;
+        isCreate = ViewBag.viewMode == "CREATE" ? true : false;
+    }
+}
+<div class="row form-group">
+    <div class="col-md-12">
+        <div class="row form-group">
+            <div class="col-md-1">
+                <input type="checkbox" class="pull-right" id="isExternalRepayment" name="isExternalRepayment" @(Model.isExternalRepayment == 1 ? "checked" : "") readonly/>
+            </div>
+            <div class="col-md-2">
+                <label class="pull-left"> Đóng phí ngoài</label>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-3">
+                <label class="pull-right">Số chứng từ của chứng từ đính kèm</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="ftttNo" name="ftttNo" value="@Model.ftttNo" readonly/>
+            </div>
+            <div class="col-md-3">
+                <label class="pull-right">Ngày đóng phí trên chứng từ đính kèm</label>
+
+            </div>
+            <div class="col-md-3">
+                <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control" id="paymentDate" name="paymentDate" value="@Model.paymentDate.Value.ToShortDateString()" readonly/>
+                    <div class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-3">
+                <label class="pull-right">Tổng tiền thực thụ</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control pull-right numberinput0" id="totalAmount" name="totalAmount" value="@Model.totalAmount" readonly/>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<errors>
+  <error>
+    <code>50001</code>
+    <desciption>Không tìm thấy dữ liệu trong hệ thống</desciption>
+  </error>
+  <error>
+    <code>50002</code>
+    <desciption>Không tìm được thông tin User</desciption>
+  </error>
+  <error>
+    <code>50003</code>
+    <desciption>Đã có dữ liệu đang chờ duyệt</desciption>
+  </error>
+  <error>
+    <code>50004</code>
+    <desciption>Dữ liệu nhập không hợp lệ</desciption>
+  </error>
+  <error>
+    <code>50005</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50006</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50007</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50008</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50009</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50010</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50011</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50012</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50013</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50014</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50015</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50016</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50017</code>
+    <desciption></desciption>
+    <error>
+      <code>50018</code>
+      <desciption></desciption>
+    </error>
+    <error>
+      <code>50019</code>
+      <desciption></desciption>
+    </error>
+  </error>
+  <code>50020</code>
+  <desciption></desciption>
+  <error>
+    <code>50021</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50022</code>
+    <desciption></desciption>
+  </error>
+  <error>
+    <code>50023</code>
+    <desciption>Ngày hết hiệu lực của hoa hồng phải >= ngày hiện tại</desciption>
+  </error>
+  <error>
+    <code>99999</code>
+    <desciption></desciption>
+  </error>
+</errors>

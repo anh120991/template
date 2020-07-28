@@ -1,0 +1,27 @@
+﻿@model IEnumerable<HDBH.Models.DatabaseModel.ModuleModel>
+@{ 
+    var lsAllMenus = ViewBag.AllMenus != null ? (List<HDBH.Models.DatabaseModel.ModuleModel>)ViewBag.AllMenus : new List<HDBH.Models.DatabaseModel.ModuleModel>();
+}
+@if (Model != null && Model.Any())
+{
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        @foreach (var item in Model)
+        {
+            var subMenu = lsAllMenus.Where(x => x.parentModuleId == item.moduleCode).Count();
+            if (subMenu > 0)
+            {
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="@item.moduleUrl" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@item.moduleName</a>
+                    @Html.Action("_childMenu", new { ParentID = item.moduleCode })
+                </li>
+            }
+            else
+            {
+                <li><a href="@item.moduleUrl">@item.moduleName</a></li>
+            }
+
+
+        }
+    </ul>
+
+}

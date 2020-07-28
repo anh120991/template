@@ -1,0 +1,157 @@
+﻿@model HDBH.Models.ViewModel.Payment.PaymentViewDetailModel
+@using HDBH.Models.ViewModel.Payment
+@{
+    ViewBag.Title = "ApproveRepayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var customer = new cusInfo_Payment();
+    if (ViewBag.CusInfo != null)
+    {
+        customer = ViewBag.CusInfo;
+    }
+    bool isApprove = false;
+    bool isView = false;
+    if (ViewBag.viewMode != null)
+    {
+        isApprove = (ViewBag.viewMode == "APPROVE" || ViewBag.viewMode == "VIEW") ? true : false;
+        isView = (ViewBag.viewMode == "VIEW") ? true : false;
+    }
+
+    var sum = new PaymentDetailSum();
+    if (ViewBag.SchedulePaymentSum != null)
+    {
+        sum = ViewBag.SchedulePaymentSum;
+    }
+
+    var fileList = ViewBag.fileList != null ? (List<HDBH.Models.ViewModel.AttachmentViewModel>)ViewBag.fileList : new List<HDBH.Models.ViewModel.AttachmentViewModel>();
+}
+
+
+<style>
+    /*.actionProduct {
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 50%;
+            cursor: pointer;
+        }*/
+
+    .bg-title {
+        background: #f0f0f0;
+        font-weight: bold;
+    }
+
+    .td-title {
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+
+<div id="formApprove">
+
+    <input type="hidden" id="repaymentId" name="repaymentId" value="@Model.repaymentId" />
+    <input type="hidden" id="mode" name="mode" value="@Model.viewMode" />
+
+    <div class="col-md-12">
+        <div class="form-group">
+            @Html.Partial("_customerInfo", customer)
+        </div>
+        <div class="tab-pane fade show active" id="mainTab" role="tabpanel" aria-labelledby="home-tab">
+            <div class="mt-5">
+                <fieldset>
+                    <legend>Thông tin kỳ phí</legend>
+                    <div class="row form-group">
+                        <div class="col-md-2">
+                            <label class="pull-right">Kỳ số</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" style="color:red" id="scheduleId" name="scheduleId" class="form-control" value="@Model.scheduleList[0].scheduleId" @(isApprove ? "disabled" : "") />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="pull-right">Kỳ số</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" style="color:red" id="schedulePaymentDate" name="schedulePaymentDate" class="form-control" value="@Model.scheduleList[0]._schedulePaymentDate" @(isApprove ? "disabled" : "") />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table id="Repayment_tblist" class="list-table" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Mã sản phẩm</th>
+                                            <th scope="col">Tên sản phẩm</th>
+                                            <th scope="col">Tiền thanh toán chưa VAT</th>
+                                            <th scope="col">Tiền VAT</th>
+                                            <th scope="col">Tiền thanh toán sau VAT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @Html.Partial("_schedulePaymentInfo", Model.paymentDetailList)
+                                        <tr>
+                                            <td colspan="2" style="color:red; text-align:right;">Tổng cộng</td>
+                                            <td><input class="form-control numberinput0" type="text" id="sumSchedulePaymentAmount" name="sumSchedulePaymentAmount" value="@sum.sumSchedulePaymentAmount" @(isApprove ? "disabled" : "") /></td>
+                                            <td><input class="form-control numberinput0" type="text" id="sumScheduleVatAmount" name="sumScheduleVatAmount" value="@sum.sumScheduleVatAmount" @(isApprove ? "disabled" : "") /></td>
+                                            <td><input class="form-control numberinput0" type="text" id="sumScheduleVatAmount" name="sumScheduleVatAmount" value="@sum.sumScheduleVatAmount" @(isApprove ? "disabled" : "") /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <br />
+            </div>
+
+            <div class="mt-5">
+                <fieldset>
+                    <legend>Thông tin kỳ thanh toán</legend>
+                    <div class="col-md-12">
+                        @Html.Partial("_paymentInfo")
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="mt-5">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-8 offset-2">
+                            @Html.Partial("~/Views/Common/_attachFiles.cshtml", fileList)
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            @if (Model.viewMode == "APPROVE")
+            {
+                <div class="row">
+                    <div class="col-md-2 pull-right">Nội dung duyệt (*)</div>
+                    <div class="col-md-8">
+                        <textarea class="form-control" style="color:red" id="contentApproved" name="contentApproved" @(isView ? "disabled" : "")>@Model.contentApproved</textarea>
+                    </div>
+                </div>
+            }
+
+            <div class="mt-5">
+                <div class="row form-group">
+                    <div class="right-control pull-right">
+
+                        <button type="button" id="btnSkip" name="btnSkip" onclick="paymentActions.PaymentInauReload()" class="btn btn-warning">Thoát</button>
+                        @if (Model.viewMode == "APPROVE")
+                        {
+                            <button type="button" id="btnEditRequest" name="btnEditRequest" statusApprove="REQEDIT" class="btn btn-warning">Yêu cầu chỉnh sửa</button>
+                            <button type="button" id="btnApprove" name="btnApprove" statusApprove="A" class="btn btn-primary">Trình duyệt</button>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script src="~/Scripts/Payment/PaymentActions.js"></script>
+    <script src="~/Scripts/Payment/PaymentInau.js"></script>"
+    <script>
+        attachFile.init();
+    </script>
+}

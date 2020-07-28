@@ -1,0 +1,27 @@
+﻿@model List<siteMapModel>
+<div class="cover-sitemap">
+    <div class="path-sitemap">
+        <a><span class="glyphicon glyphicon-home"></span></a>&nbsp; <i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;
+        @if (Model != null && Model.Any())
+        {
+
+            int i = 0;
+            foreach (var item in Model)
+            {
+                if (i == Model.Count - 1)
+                {
+                    @Html.Raw("<a class='last-a' >" + item.title + "</a>");
+                }
+                else
+                {
+                    @Html.Raw("<a class='sub-a'  href='" + item.url + "'>" + item.title + "</a>&nbsp;<i class=\"fa fa-caret-right\" aria-hidden=\"true\"></i>&nbsp;");
+                }
+
+                i++;
+            }
+        }
+
+    </div>
+
+</div>
+

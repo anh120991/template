@@ -1,0 +1,40 @@
+﻿@model IEnumerable<HDBH.Models.ViewModel.InsuranceContractCollateralViewModel>
+@{
+    bool onlyRead = false;
+    if (Model != null)
+    {
+        onlyRead = ViewBag.viewMode == HDBH.Models.Constant.ViewModeCons.APPROVE || ViewBag.viewMode == HDBH.Models.Constant.ViewModeCons.VIEW ? true : false;
+    }
+}
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <input type="text" name="collateralCode" class="form-control" disabled value="@item.collateralCode" />
+                <input type="hidden" name="insCollId" value="@item.insCollId" />
+
+            </td>
+            <td>
+                <input type="text" name="collateralTypeCode" class="form-control" disabled value="@item.collateralTypeCode" />
+            </td>
+            <td>
+                <input type="text" name="collateralValue" class="form-control numberinput2" disabled value="@item.collateralValue" />
+            </td>
+            <td>
+                <input type="text" name="executionValue" class="form-control numberinput2" disabled value="@item.executionValue" />
+            </td>
+            <td>
+                <input type="text" name="manBranchCode" class="form-control" disabled value="@item.manBranchCode" />
+            </td>
+            @if (!onlyRead)
+            {
+                <td class="text-center">
+                    <label name="removeRow" class="actionProduct bg-danger  "><i class="fa fa-minus" aria-hidden="true"></i></label>
+                </td>
+            }
+        </tr>
+    }
+}
+

@@ -1,0 +1,26 @@
+﻿
+
+
+<div class="row form-group">
+    <div class="col-md-2">
+        <label class="pull-right">Kỳ số</label>
+    </div>
+    <div class="col-md-3">
+        <select id="scheduleId" name="scheduleId" class="form-control">
+            @if (Model.scheduleList != null)
+            {
+                foreach (var item in Model.scheduleList)
+                {
+                    <option schedulePaymentDate="@item._schedulePaymentDate" paymentList="@Newtonsoft.Json.JsonConvert.SerializeObject(Model.paymentDetailList)" value="@item.scheduleId">@item.scheduleId</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label class="pull-right">Ngày thanh toán dự kiến</label>
+    </div>
+    <div class="col-md-3">
+        <input id="schedulePaymentDate" name="schedulePaymentDate" class="form-control" value="">
+
+    </div>
+</div>

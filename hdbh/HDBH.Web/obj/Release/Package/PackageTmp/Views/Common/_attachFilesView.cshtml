@@ -1,0 +1,43 @@
+﻿@model List<HDBH.Models.ViewModel.AttachmentViewModel>
+
+<div class="mt-3">
+    <h4>Tập tin được tải lên</h4>
+    <table id="attactment-table" class="mt-3 ml-5">
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr name="atm">
+                        <td width="10%">
+                            @{
+                                string extention = HDBH.Lib.Helper.Library.getExtentionFile(item.fileName);
+                                string classico = string.Empty;
+                                string href = "/Common/DownloadFile?url=" + item.filePath + "&fileName=" + item.fileName;
+                                switch (extention)
+                                {
+                                    case "xlsx": classico = "fa fa-file-excel-o"; break;
+                                    case "docx": classico = "fa fa-file-word-o"; break;
+                                    case "pdf": classico = "fa fa-file-pdf-o"; break;
+                                    case "txt": classico = "fa fa-file-text"; break;
+                                    case "jpg": classico = "fa fa-picture-o"; break;
+                                    case "png": classico = "fa fa-picture-o"; break;
+                                    default: classico = "fa fa-file"; break;
+                                }
+                            }
+
+                            <i name="attachIco" class="@classico" aria-hidden="true"></i>
+                        </td>
+                        <td><span name="fileItem" fileId="@item.fileId">@item.fileName</span></td>
+                        <td width="10%">
+                            <a name="btnDownloadFile" title="Tải tập tin" href="@href"><i class="fa fa-download" aria-hidden="true"></i></a>
+                        </td>
+                        @*<td width="10%">
+                                <a name="btnRemoveFile" filePath="@item.filePath"><i class="fa fa-trash-o" aria-hidden="true" style="font-size: 18px;"></i></a>
+                            </td>*@
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,158 @@
+﻿ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 09:28:25 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 09:55:46 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 10:12:13 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 11:12:20 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 11:13:31 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 11:13:44 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 1 is not a valid value for Boolean. ---> System.FormatException: String was not recognized as a valid Boolean.
+   at System.Boolean.Parse(String value)
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 11:14:09 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 1 is not a valid value for Boolean. ---> System.FormatException: String was not recognized as a valid Boolean.
+   at System.Boolean.Parse(String value)
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 11:14:28 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 1 is not a valid value for Boolean. ---> System.FormatException: String was not recognized as a valid Boolean.
+   at System.Boolean.Parse(String value)
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 11:14:52 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 1 is not a valid value for Boolean. ---> System.FormatException: String was not recognized as a valid Boolean.
+   at System.Boolean.Parse(String value)
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 11:15:08 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 1 is not a valid value for Boolean. ---> System.FormatException: String was not recognized as a valid Boolean.
+   at System.Boolean.Parse(String value)
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 11:15:57 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 1 is not a valid value for Boolean. ---> System.FormatException: String was not recognized as a valid Boolean.
+   at System.Boolean.Parse(String value)
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.BooleanConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 11:28:20 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 11:29:59 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 13:12:21 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 13:27:20 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 13:45:46 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 13:49:15 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 14:37:28 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 15:25:18 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 15:36:33 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 15:39:26 ((!)) InsuranceContractService => updateCloseInsurContract
+System.Data.SqlClient.SqlException (0x80131904): The parameterized query '(@insuranceId bigint,@insuranceContractNo nvarchar(max) ,@userId' expects the parameter '@insuranceId', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, IEnumerable`1 parameters)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, Object[] parameters)
+   at HDBH.SQLData.Infrastructure.GenericRepository.ExecWithStoreProcedureCommand(String query, SqlParameter[] parameters) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.SQLData\Infrastructure\GenericRepository.cs:line 35
+   at HDBH.Services.InsuranceContractService.updateCloseInsurContract(String insuranceId, String insuranceContractNo, String userId, String branchCode) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\InsuranceContractService.cs:line 548
+ClientConnectionId:222298fe-8dc9-4bc0-a572-24996ded7f91
+Error Number:8178,State:1,Class:16
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 15:39:41 ((!)) InsuranceContractService => updateCloseInsurContract
+System.Data.SqlClient.SqlException (0x80131904): The parameterized query '(@insuranceId bigint,@insuranceContractNo nvarchar(max) ,@userId' expects the parameter '@insuranceId', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, IEnumerable`1 parameters)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, Object[] parameters)
+   at HDBH.SQLData.Infrastructure.GenericRepository.ExecWithStoreProcedureCommand(String query, SqlParameter[] parameters) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.SQLData\Infrastructure\GenericRepository.cs:line 35
+   at HDBH.Services.InsuranceContractService.updateCloseInsurContract(String insuranceId, String insuranceContractNo, String userId, String branchCode) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\InsuranceContractService.cs:line 548
+ClientConnectionId:222298fe-8dc9-4bc0-a572-24996ded7f91
+Error Number:8178,State:1,Class:16
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 15:48:01 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 15:50:53 ((!)) CPProductService => approveCpProdCommis
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'COMMIS_AUTO_ID'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, IEnumerable`1 parameters)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, Object[] parameters)
+   at HDBH.SQLData.Infrastructure.GenericRepository.ExecWithStoreProcedureCommand(String query, SqlParameter[] parameters) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.SQLData\Infrastructure\GenericRepository.cs:line 35
+   at HDBH.Services.CPProductService.approveCpProdCommis(CPProductApproveModel model) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\CPProductService.cs:line 69
+ClientConnectionId:6a2e3016-cc4b-4c77-a085-37fe8811e7d6
+Error Number:207,State:1,Class:16
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 15:52:51 ((!)) CPProductService => approveCpProdCommis
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'COMMIS_AUTO_ID'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, IEnumerable`1 parameters)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlCommand(DatabaseFacade databaseFacade, RawSqlString sql, Object[] parameters)
+   at HDBH.SQLData.Infrastructure.GenericRepository.ExecWithStoreProcedureCommand(String query, SqlParameter[] parameters) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.SQLData\Infrastructure\GenericRepository.cs:line 35
+   at HDBH.Services.CPProductService.approveCpProdCommis(CPProductApproveModel model) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\CPProductService.cs:line 69
+ClientConnectionId:6a2e3016-cc4b-4c77-a085-37fe8811e7d6
+Error Number:207,State:1,Class:16
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 16:21:02 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 16:35:29 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/23/2020 19:02:48 ((!)) isValid: True

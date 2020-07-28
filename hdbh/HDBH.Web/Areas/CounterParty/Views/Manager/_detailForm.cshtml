@@ -1,0 +1,125 @@
+﻿@model HDBH.Models.DatabaseModel.CounterPartyDetailModel
+@{
+    string strSignedContractDate = Model.signedContractDate != null ? DateTime.Parse(Model.signedContractDate.ToString()).ToShortDateString() : "";
+    bool isCheckStatus = false;
+    bool isUpdate = false;
+    bool isView = false;
+    string strDisabled = string.Empty;
+    if (Model != null)
+    {
+        isCheckStatus = Model.counterPartyStatus == HDBH.Models.Constant.CounterPartyStatusConst.A ? true : false;
+        isUpdate = Model.viewMode.Contains(HDBH.Models.Constant.ViewModeCons.UPDATE);
+        isView = Model.viewMode.Contains(HDBH.Models.Constant.ViewModeCons.VIEW);
+    }
+    strDisabled = isView ? "disabled" : "";
+
+}
+<input type="hidden" name="counterPartyId" value="@Model.counterPartyId" />
+@if (Model.counterPartyGroup == "CONTRACTED")
+{
+
+    <div class="row form-group">
+        <div class="col-md-2 left-label">
+            <label class="pull-right">
+                Mã Cif (*)
+            </label>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group md-form form-sm form-2 pl-0">
+                <input class="form-control my-0 py-1 lime-border" id="cifCounterParty" name="cifCounterParty" type="text" aria-label="Search" value="@Model.cifCounterParty" @strDisabled>
+                <div class="input-group-append">
+                    <span class="input-group-text lime lighten-2" id="btnCallPopupSearchCustomer" data-title="TÌM KIẾM DANH SÁCH KHÁCH HÀNG" data-toggle="modal" data-target="#lgModal" data-template="~/Views/Shared/Template/_searchCustomer.cshtml">
+                        <i class="fa fa-search text-grey"
+                           aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+
+            @*<input id="cifCounterParty" name="cifCounterParty" type="text" class="form-control input-lg text-uppercase" />
+                </div>
+                 <span class="input-group-btn">
+                     <button id="btnSearchCif" class="btn btn-info btn-lg" type="button">
+                         <i class="glyphicon glyphicon-search"></i>
+                     </button>
+                 </span>*@
+        </div>
+
+        <div class="col-md-6">
+            <input type="text" id="counterPartyName" name="counterPartyName" class="form-control" disabled value="@Model.counterPartyName"  @strDisabled>
+        </div>
+    </div>
+}
+else if (Model.counterPartyGroup == "UNCONTRACT")
+{
+    <div class="row form-group">
+        <div class="col-md-2 left-label">
+            <label class="pull-right">
+                Tên đối tác
+            </label>
+        </div>
+        <div class="col-md-10">
+            <input type="text" id="counterPartyName" name="counterPartyName" class="form-control" value="@Model.counterPartyName"  @strDisabled/>
+        </div>
+    </div>
+}
+<div class="row form-group">
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Tên viết tắt (*)
+        </label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" id="shortName" name="shortName" class="form-control text-uppercase" value="@Model.shortName"   @strDisabled/>
+    </div>
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Ngày ký hợp đồng (*)
+        </label>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group date" data-provide="datepicker">
+            <input class="datepicker form-control" id="signedContractDate" name="signedContractDate" type="text" value="@strSignedContractDate"  @strDisabled />
+            <div class="input-group-addon">
+                <span class="fa fa-calendar"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Tài khoản chuyên thu (*)
+        </label>
+    </div>
+    <div class="col-md-10">
+        <input type="text" id="paymentAccount" name="paymentAccount" class="form-control text-uppercase" value="@Model.paymentAccount"  @strDisabled />
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-md-2 left-label">
+        <label class="pull-right">
+            Ghi chú
+        </label>
+    </div>
+    <div class="col-md-10">
+        <textarea type="text" id="counterPartyDesc" name="counterPartyDesc" class="form-control text-uppercase"  @strDisabled >@Model.counterPartyDesc</textarea>
+    </div>
+</div>
+
+<div class="row form-group">
+
+    <div class="col-md-4 offset-md-2">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="counterPartyStatus" id="counterPartyStatus" @(isCheckStatus ? "checked" : "")  @strDisabled>
+            <label class="custom-control-label" for="counterPartyStatus">Kích hoạt</label>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 offset-md-9">
+        <button type="submit" class="btn btn-primary" @Html.Raw(strDisabled)>@(isUpdate ? "Cập nhật" :  "Lưu")</button>
+        <a href="@Url.Action("index")" class="btn btn-warning">Bỏ qua</a>
+    </div>
+</div>

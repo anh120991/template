@@ -1,0 +1,31 @@
+﻿<div class="row form-group">
+    <div class="col-md-4 left-label">
+        <label class="pull-right">
+            Loại hợp đồng
+        </label>
+    </div>
+    <div class="col-md-8">
+
+        <select class="form-control" id="slContractType">
+            <option value="">Loại hợp đồng</option>
+            @Html.Raw(Html.Action("_getListContractType", "Manager", new { area = "InsuranceContract" }))
+        </select>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-md-4 left-label">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="cbExcept" id="cbExcept" />
+            <label class="custom-control-label" for="cbExcept"> Ngoại lệ</label>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <select class="form-control" id="exceptType" name="exceptType" disabled></select>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-md-8 offset-4">
+        <button class="btn btn-primary " id="btnCountinue" name="btnCountinue"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Tiếp tục</button>
+    </div>
+</div>
+

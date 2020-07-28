@@ -1,0 +1,107 @@
+﻿ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 09:31:00 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 09:31:00 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 09:31:27 ((!)) CounterPartyListService => searchCounterPartyInauList
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00911: invalid character
+ORA-06512: at "CONTRACTMAN.PKG_HDBH", line 645
+ORA-06512: at line 1
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecWithStoreProcedure(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 136
+   at HDBH.Services.CounterPartyListService.searchCounterPartyInauList(DateTime fromDate, DateTime toDate, String counterPartyType, String cifCounterParty, String counterPartyName, String bancasRepresentative, Int32 pageNumber, Int32 pageSize, Int32& totalNumber) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyListService.cs:line 42
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 09:33:44 ((!)) CounterPartyListService => searchCounterPartyInauList
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00911: invalid character
+ORA-06512: at "CONTRACTMAN.PKG_HDBH", line 645
+ORA-06512: at line 1
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at HDBH.Data.Infrastructure.BaseRepository`1.ExecWithStoreProcedure(String query, OracleParameter[] param) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Data\Infrastructure\BaseRepository.cs:line 136
+   at HDBH.Services.CounterPartyListService.searchCounterPartyInauList(DateTime fromDate, DateTime toDate, String counterPartyType, String cifCounterParty, String counterPartyName, String bancasRepresentative, Int32 pageNumber, Int32 pageSize, Int32& totalNumber) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyListService.cs:line 42
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 09:58:52 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 09:58:53 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 09:59:10 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 09:59:10 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:04:37 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:04:37 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:31:49 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:31:49 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:32:04 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:32:04 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:32:38 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:32:38 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:53:19 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:53:19 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:54:18 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 10:54:19 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 11:31:08 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 11:31:08 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:01:21 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:01:21 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:04:27 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:04:27 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:14:34 ((!)) CounterPartyService => getCounterPartyDetail
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
+   at HDBH.Services.CounterPartyService.getCounterPartyDetail(Int32 counterPartyId, String cifCounterParty, Int32 isInau) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 52
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:14:50 ((!)) CounterPartyService => getCounterPartyDetail
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at HDBH.Services.CounterPartyService.getCounterPartyDetail(Int32 counterPartyId, String cifCounterParty, Int32 isInau) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 52
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:16:42 ((!)) CounterPartyService => getCounterPartyDetail
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at HDBH.Services.CounterPartyService.getCounterPartyDetail(Int32 counterPartyId, String cifCounterParty, Int32 isInau) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 52
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:16:47 ((!)) CounterPartyService => getCounterPartyDetail
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at HDBH.Services.CounterPartyService.getCounterPartyDetail(Int32 counterPartyId, String cifCounterParty, Int32 isInau) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 52
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:22:51 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:22:51 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:23:21 ((!)) CounterPartyService => getCounterPartyDetail
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at HDBH.Services.CounterPartyService.getCounterPartyDetail(Int32 counterPartyId, String cifCounterParty, Int32 isInau) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 75
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:24:52 ((!)) CounterPartyService => getCounterPartyDetail
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at HDBH.Services.CounterPartyService.getCounterPartyDetail(Int32 counterPartyId, String cifCounterParty, Int32 isInau) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Services\Services\CounterParty\CounterPartyService.cs:line 75
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:39:11 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:39:11 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:39:13 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 14:39:13 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 16:01:27 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 16:01:27 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 16:55:42 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 16:55:42 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 17:02:26 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 17:02:26 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 17:07:42 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 17:07:42 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 17:14:28 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  10/16/2019 17:14:28 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain

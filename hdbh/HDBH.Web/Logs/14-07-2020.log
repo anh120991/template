@@ -1,0 +1,78 @@
+﻿ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 09:24:21 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 10:18:15 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 10:27:37 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 10:30:16 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 10:34:46 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 10:48:35 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 11:00:32 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 11:00:36 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 11:04:40 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 11:35:14 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 11:36:29 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 11:44:36 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 13:20:01 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 13:23:27 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 13:26:24 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 13:48:56 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 14:52:14 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 14:59:17 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 15:17:18 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 15:20:51 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 15:40:47 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 15:48:00 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 15:55:20 ((!)) ManagerController => ImportProduct
+System.Exception: aa is not a valid value for Int64. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.ComponentModel.Int64Converter.FromString(String value, NumberFormatInfo formatInfo)
+   at System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 184
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 15:56:07 ((!)) ManagerController => ImportProduct
+System.Exception: aa is not a valid value for Int64. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.ComponentModel.Int64Converter.FromString(String value, NumberFormatInfo formatInfo)
+   at System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 184
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 15:57:36 ((!)) ManagerController => ImportProduct
+System.Exception: aa is not a valid value for Int64. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.ComponentModel.Int64Converter.FromString(String value, NumberFormatInfo formatInfo)
+   at System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 184
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 15:57:58 ((!)) ManagerController => ImportProduct
+System.Exception: aa is not a valid value for Int64. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.ComponentModel.Int64Converter.FromString(String value, NumberFormatInfo formatInfo)
+   at System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 184
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 15:59:15 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 15:59:39 ((!)) ManagerController => ImportProduct
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 189
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 16:00:15 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 16:04:54 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 17:53:40 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/14/2020 18:58:04 ((!)) isValid: True

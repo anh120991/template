@@ -1,0 +1,42 @@
+﻿@model IEnumerable<HDBH.Models.ViewModel.CPProductImportProductModel>
+@{
+    HDBH.Models.ViewModel.CPProductImportProductModel template = new HDBH.Models.ViewModel.CPProductImportProductModel();
+}
+<tr id="trTemplate" class="hidden">
+    @Html.Partial("~/Areas/CPProduct/Views/Shared/_templateProduct.cshtml", template)
+</tr>
+
+@if (Model != null && Model.Any())
+{
+    int i = 1;
+    foreach (var item in Model)
+    {
+        string viewModel = ViewBag.viewMode;
+        bool isUpdate = false;
+        if (!string.IsNullOrEmpty(viewModel))
+        {
+            isUpdate = true;
+        }
+        if(i == Model.Count())
+        {
+            item.isShowAdd = true;
+        }
+        else
+        {
+            item.isShowAdd = false;
+        }
+        item.isShowRemove = true;
+        <tr name="rowData">
+            @Html.Partial("~/Areas/CPProduct/Views/Shared/_templateProduct.cshtml", item)
+        </tr>
+        i++;
+    }
+}
+else
+{
+    <tr isFirst="1" name="rowData">
+        @Html.Partial("~/Areas/CPProduct/Views/Shared/_templateProduct.cshtml", template)
+    </tr>
+}
+
+

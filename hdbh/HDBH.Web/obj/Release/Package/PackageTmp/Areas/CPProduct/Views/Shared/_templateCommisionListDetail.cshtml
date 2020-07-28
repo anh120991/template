@@ -1,0 +1,64 @@
+﻿@model HDBH.Models.ViewModel.CPProductImportCommisionListModel
+@{ 
+    List<HDBH.Models.ViewModel.CPProductImportProductModel> lsSelect = new List<HDBH.Models.ViewModel.CPProductImportProductModel>();
+    if(Model.SelectList != null)
+    {
+        lsSelect = (List<HDBH.Models.ViewModel.CPProductImportProductModel>)Model.SelectList;
+    }
+}
+    <td>
+        <select class="form-control" name="productCode">
+            @if (lsSelect != null && lsSelect.Any())
+            {
+                foreach (var item in lsSelect)
+                {
+                    <option value="@item.productCode" @(Model.productCode != null &&  item.productCode != null && item.productCode.ToUpper() == Model.productCode.ToUpper() ? "selected" : "") data-name="@item.productName">@(item.productCode + " - " + item.productName)</option>
+                }
+            }
+        </select>
+        <input name="productName" type="hidden" class="form-control" value="@Model.productName" />
+        <input name="commisionId" type="hidden" value="@Model.commisionId" />
+        <input name="productId" type="hidden" value="@Model.productId" />
+        <input name="commisAutoId" type="hidden" value="@Model.commisAutoId" />
+        <input name="isUsed" type="hidden" value="@Model.isUsed" />
+    </td>
+<td>
+    <div class="input-group date" data-provide="datepicker">
+        <input class="datepicker form-control" id="effectedFromDate" name="effectedFromDate" compairDate="effectedToDate" equalDate="small" type="text" value="@Model.effectedFromDate.ToShortDateString()" />
+        <div class="input-group-addon">
+            <span class="fa fa-calendar"></span>
+        </div>
+    </div>
+</td>
+<td>
+    <div class="input-group date" data-provide="datepicker">
+        <input class="datepicker form-control" id="effectedToDate" name="effectedToDate" compairDate="effectedFromDate" equalDate="big"  type="text" value="@Model.effectedToDate.ToShortDateString()" />
+        <div class="input-group-addon">
+            <span class="fa fa-calendar"></span>
+        </div>
+    </div>
+</td>
+<td>
+    <input name="totalCommisRate" type="text" class="form-control" value="@Model.totalCommisRate" disabled />
+</td>
+<td>
+    <input name="agencyCommisRate" type="text" class="form-control numberpercentnosign changeRow" value="@Model.agencyCommisRate" />
+</td>
+<td>
+    <input name="supportCommisRate" type="text" class="form-control numberpercentnosign changeRow" value="@Model.supportCommisRate" />
+</td>
+<td>
+    <input name="serviceCostRate" type="text" class="form-control numberpercentnosign changeRow" value="@Model.serviceCostRate" />
+</td>
+<td>
+    <input name="commisRate" type="text" class="form-control numberpercentnosign changeRow" value="@Model.commisRate" />
+</td>
+<td>
+    <input name="remainRate" type="text" class="form-control" value="@Model.remainRate" disabled />
+</td>
+<td class="controlRow">
+    <label name="addRow" class="actionProduct bg-success @(Model.isShowAdd ? "": "hidden" )"><i class="fa fa-plus" aria-hidden="true"></i></label>
+    <label name="removeRow" class="actionProduct bg-danger  @(Model.isShowRemove ? "" : "hidden")"><i class="fa fa-minus" aria-hidden="true"></i></label>
+    <label name="warningRow" class="actionProduct bg-warning @(!string.IsNullOrEmpty(Model.errorMessage) ? "" : "hidden")" title="@Model.errorMessage"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></label>
+   
+</td>

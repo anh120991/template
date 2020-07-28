@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+    <link href="~/Content/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <style>
+        .header-map {
+            display: none;
+        }
+
+        .err-content {
+            margin-top: 5%;
+        }
+
+        .err-left-content {
+            margin-top: 20%;
+        }
+
+        .err-left-text {
+            font-size: 16px;
+        }
+
+            .err-left-text b {
+                font-size: 25px;
+            }
+
+            .err-left-text label {
+                color: #808080;
+                font-size: 18px;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row form-group err-content">
+            <div class="col-md-4 col-md-offset-2">
+                <div class="err-left-content">
+                    <div class="row form-group">
+                        <img src="~/Content/images/based/app-title.png" class="img-responsive" />
+                    </div>
+                    <div class="row form-group err-left-text">
+                        <b>404.</b> <label>Không tìm thấy đường dẫn</label>
+                        <p>
+                            Đường dẫn của bạn không tồn tại, vui lòng đăng nhập lại hệ thống!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-md-offset-1">
+                <div class="row form-group">
+                    <img src="~/Content/images/based/errorimg.jpg" class="img-responsive" width="400" />
+                </div>
+
+            </div>
+        </div>
+        <div class="row text-center">
+            <button class="btn btn-primary" onclick="location.href = '/Home/'">Quay về trang chủ</button>
+        </div>
+    </div>
+    
+</body>
+</html>

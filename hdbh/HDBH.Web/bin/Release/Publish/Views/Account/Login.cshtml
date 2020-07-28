@@ -1,0 +1,201 @@
+﻿@using HDBH.Authorize;
+@{
+    Layout = null;
+    ViewBag.Title = "Đăng nhập";
+    ViewBag.IsLogin = "Login";
+    string myaction = (ViewData["myaction"] != null) ? ViewData["myaction"].ToString() : "";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hợp đồng bảo hiểm</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+
+    @Styles.Render("~/css")
+    <link href="~/Content/css/style-dev.css" rel="stylesheet" />
+    <style>
+
+        @@import url('https://fonts.googleapis.com/css?family=Numans');
+
+        html, body {
+            background: #e0e0e0 url('../../Content/images/based/bkg_main.png');
+            background-position: bottom right;
+            background-repeat: no-repeat;
+            height: 100%;
+            font-family: 'Numans', sans-serif;
+        }
+
+        .container {
+            height: 100%;
+            align-content: center;
+        }
+
+        .card {
+            height: 370px;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 400px;
+            background-color: rgba(0,0,0,0.5) !important;
+        }
+
+        .social_icon span {
+            font-size: 60px;
+            margin-left: 10px;
+            color: #FFC312;
+        }
+
+            .social_icon span:hover {
+                color: white;
+                cursor: pointer;
+            }
+
+        .card-header h3 {
+            color: white;
+        }
+
+        .social_icon {
+            position: absolute;
+            right: 20px;
+            top: -45px;
+        }
+
+        .input-group-prepend span {
+            width: 50px;
+            background-color: #FFC312;
+            color: black;
+            border: 0 !important;
+        }
+
+        input:focus {
+            outline: 0 0 0 0 !important;
+            box-shadow: 0 0 0 0 !important;
+        }
+
+        .remember {
+            color: white;
+        }
+
+            .remember input {
+                width: 20px;
+                height: 20px;
+                margin-left: 15px;
+                margin-right: 5px;
+            }
+
+        .login_btn {
+            color: black;
+            background-color: #FFC312;
+            width: 100px;
+        }
+
+            .login_btn:hover {
+                color: black;
+                background-color: white;
+            }
+
+        .links {
+            color: white;
+        }
+
+            .links a {
+                margin-left: 4px;
+            }
+    </style>
+</head>
+
+
+<body style="margin: 0; height: 100vh;">
+
+
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Insurance Manager</h3>
+                    <div class="d-flex justify-content-end social_icon">
+                        <span><i class="fab fa-facebook-square"></i></span>
+                        <span><i class="fab fa-google-plus-square"></i></span>
+                        <span><i class="fab fa-twitter-square"></i></span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form action="/account/login" method="post" id="divLogin">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Tài khoản" name="UserId">
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Mật khẩu" name="Password">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn float-right login_btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            login.Init();
+        });
+    </script>
+    <script type="text/javascript">
+        var login = {
+            Init: function () {
+                login.Validate('#divLogin');
+            },
+            Validate: function (form) {
+                $(form).validate({
+                    rules: {
+                        UserId: "required",
+                        Password: {
+                            required: true
+                        }
+                    },
+                    messages: {
+                        UserId: "Vui lòng nhập tài khoản",
+                        Password: {
+                            required: "Vui lòng nhập mật khẩu"
+                        }
+                    },
+                    submitHandler: function (form) {
+                        login.Submit(form);
+                    }
+                });
+            },
+            Submit: function (form) {
+                var url = $(form).attr('action');
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $(form).serialize(), // serializes the form's elements.
+                    success: function (data) {
+                        if (data.Result == 0) {
+                            location.href = data.Url;
+                        }
+                        else {
+                            //Notification.Error(data.Message);
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

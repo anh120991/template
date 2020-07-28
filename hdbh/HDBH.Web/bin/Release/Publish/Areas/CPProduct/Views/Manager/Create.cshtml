@@ -1,0 +1,220 @@
+﻿@model HDBH.Models.ViewModel.CPProductViewModel
+@{
+    ViewBag.Title = "Index";
+    bool isUpdate = false;
+    isUpdate = !string.IsNullOrEmpty(Model.viewMode) && Model.viewMode == HDBH.Models.Constant.ViewModeCons.UPDATE ? true : false;
+    bool isApprove = false;
+    isApprove = !string.IsNullOrEmpty(Model.viewMode) && Model.viewMode == HDBH.Models.Constant.ViewModeCons.APPROVE ? true : false;
+    var fileList = ViewBag.fileList != null ? (List<HDBH.Models.ViewModel.AttachmentViewModel>)ViewBag.fileList : new List<HDBH.Models.ViewModel.AttachmentViewModel>();
+
+    bool isView = false;
+    isView = !string.IsNullOrEmpty(Model.viewMode) && Model.viewMode == HDBH.Models.Constant.ViewModeCons.VIEW ? true : false;
+}
+
+<style>
+    .actionProduct {
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>
+
+@section pageTitle {
+    <div class="tabs tabs-style-tzoid">
+        <nav>
+            <ul>
+                <li><a  href="@(isApprove ? Url.Action("Inau") :  Url.Action("Index"))"><span class="glyphicon glyphicon-th-list"></span><span>Quản lý danh sách </span></a> </li>
+                <li class="tab-current"><a href="@Url.Action("Create")"><span class="glyphicon glyphicon-plus-sign"></span><span>Tạo mới đối tác</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+}
+
+@if(Model != null)
+{
+<div id="detailForm">
+
+
+    <div class="col-md-12">
+        <ul class="nav nav-tabs custom-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Thông tin chung</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Đính kèm file</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="mt-5">
+                    <fieldset>
+                        <legend> Thông tin đối tác liên kết</legend>
+                        <form id="frm" action="/CPProduct/Manager/Insert">
+                            @Html.Partial("~/Areas/CPProduct/Views/Manager/_detailForm.cshtml")
+                        </form>
+                    </fieldset>
+                    <fieldset class="mt-5">
+                        <legend> Thông tin sản phẩm và hoa hồng theo sản phẩm</legend>
+                        <div class="">
+                            <div class="row">
+                                <div class="col-md-8 offset-2">
+                                    <div class="row importproductList">
+                                        <div class="col-md-12 right-btn">
+
+                                            <div class="col-md-3 pull-right">
+                                                <div class="fileUpload">
+                                                    <input type="file" class="upload" name="importProduct" id="importProduct" />
+                                                    <span><i class="fa fa-upload" aria-hidden="true"></i> Import sản phẩm</span>
+                                                </div>
+                                            </div>
+                                            <a href="/Content/template/templateImportProduct.xlsx" target="_blank" class="pull-right">Template import sản phẩm</a>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <table id="tblProduct" class="list-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Mã sản phẩm</th>
+                                                    <th>Tên sản phẩm</th>
+                                                    <th>Thao tác</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @Html.Partial("~/Areas/CPProduct/Views/Shared/_templateProductImport.cshtml", Model.productList)
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            @if (Model.counterPartyGroup == "CONTRACTED")
+                            {
+                                <div class="row form-group mt-5 importCommisionList">
+                                    <div class="col-md-12 right-btn">
+                                        <div class="col-md-2 pull-right">
+                                            <div class="fileUpload bg-secondary">
+                                                <span id="exportCommisionList"><i class="fa fa-download" aria-hidden="true"></i> Xuất Excel hoa hồng</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 pull-right">
+                                            <div class="fileUpload">
+                                                <input type="file" class="upload" name="importCommisionList" id="importCommisionList" />
+                                                <span><i class="fa fa-upload" aria-hidden="true"></i> Import hoa hồng</span>
+                                            </div>
+                                        </div>
+                                        <a href="/Content/template/templateImportCommisionList.xlsx" target="_blank" class="pull-right">Template import hoa hồng</a>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12 ">
+                                        <table id="tblCommisionList" class="list-table" style="width: 100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" width="10%"> @Html.Localize("lbl_productCode")</th>
+                                                    @*<th scope="col"> @Html.Localize("lbl_productName")</th>*@
+                                                    <th scope="col">Hiệu lực từ ngày</th>
+                                                    <th scope="col">Hiệu lực đến ngày</th>
+                                                    <th scope="col">Hoa hồng tổng %</th>
+                                                    <th scope="col">Đối tác <br /> (Hoa hồng đại lý %)</th>
+                                                    <th scope="col"> Đối tác <br /> (Hỗ trợ thi đua %)</th>
+                                                    <th scope="col">Đối tác <br /> (Chi phí dịch vụ %)</th>
+                                                    <th scope="col">Chi thưởng %</th>
+                                                    <th scope="col">Còn lại</th>
+                                                    <th scope="col" width="10%">Thao tác</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @Html.Partial("~/Areas/CPProduct/Views/Shared/_templateCommissionListImport.cshtml", Model.commisionList)
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            }
+
+                        </div>
+                    </fieldset>
+                </div>
+
+            </div>
+
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="mt-5">
+                    <div class="row">
+                        <div class="col-md-8 offset-2">
+                            @Html.Partial("~/Views/Common/_attachFiles.cshtml", fileList)
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @if (isApprove)
+        {
+            <div class="row">
+                <div class="col-md-2">Nội dung duyệt (*)</div>
+                <div class="col-md-8">
+                    <textarea class="form-control" name="approveContent"></textarea>
+                </div>
+            </div>
+        }
+
+        <div class="row mt-5">
+            <div class="right-control pull-right">
+                <a href="@Url.Action("index")" class="btn btn-warning">Bỏ qua</a>
+                @if (isApprove)
+                {
+                    <button class="btn btn-primary" id="btnApprove" approveStatus="A">Duyệt</button>
+                    <button class="btn btn-danger" id="btnReqEdit" approveStatus="REQEDIT">Yêu cầu chỉnh sửa</button>
+                }
+                else
+                {
+                    @Html.UpdateButton("btnSubmitApprove", isUpdate ? "Cập nhật" : "Trình duyệt")
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+
+}
+
+
+
+
+
+
+@section scripts {
+    <script>
+        var urlAction = '';
+        var urlList = '@Url.Action("Index")';
+        urlAction = '@(isUpdate ? Url.Action("UpdateProduct") : Url.Action("InsertProduct"))';
+        var isApprove = '@isApprove' == "True";
+        if (isApprove) {
+            $('input').attr('disabled', true);
+            $('select').attr('disabled', true);
+            $('#detailForm').find('.importproductList').remove();
+            $('#detailForm').find('.importCommisionList').remove();
+            $('#attactment-table').find('a[name=btnRemoveFile]').remove();
+            $('#detailForm').find('.controlRow').html('');
+            $('#uploader').remove();
+        }
+    </script>
+    <script src="~/Scripts/JScustom/diacritics.js"></script>
+    <script src="~/Scripts/CPProduct/productDetail.js"></script>
+    <script>
+        product.Init();
+        attachFile.init();
+        if ('@isView'.toLowerCase() == 'true') {
+            $('input').attr('disabled', true);
+            $('select').attr('disabled', true);
+            $('label[name=addRow]').remove();
+            $('label[name=removeRow]').remove();
+            $('.importproductList').remove();
+            $('.importCommisionList').remove();
+            $('#btnSubmitApprove').remove();
+            $('.fileContainer').remove();
+        }
+    </script>
+}

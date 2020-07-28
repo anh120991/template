@@ -1,0 +1,42 @@
+﻿@model HDBH.Models.ViewModel.Payment.cusInfo_Payment
+@{
+    bool isApprove = false;
+    bool isUpdate = false;
+    bool isCreate = false;
+    if (ViewBag.viewMode != null)
+    {
+        isApprove = (ViewBag.viewMode == "APPROVE" || ViewBag.viewMode == "VIEW") ? true : false;
+        isUpdate = (ViewBag.viewMode == "UPDATE") ? true : false;
+        isCreate = ViewBag.viewMode == "CREATE" ? true : false;
+    }
+}
+
+@if (Model != null)
+{
+    <div class="col-md-12">
+        <div class="row form-group">
+            <div class="col-md-2">
+                <label class="pull-right">Số hợp đồng</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" id="insuranceContractNo" name="insuranceContractNo" class="form-control" value="@Model.insuranceContractNo" @(isApprove ? "disabled" : "") />
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2">
+                <label class="pull-right">Mã khách hàng</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" id="customerCif" name="customerCif" class="form-control" value="@Model.customerCif" @(isApprove ? "disabled" : "") />
+            </div>
+            <div class="col-md-2">
+                <label class="pull-right">Tên khách hàng</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" id="customerName" name="customerName" class="form-control" value="@Model.customerName" @(isApprove ? "disabled" : "") />
+            </div>
+        </div>
+    </div>
+    <br />
+}

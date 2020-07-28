@@ -1,0 +1,30 @@
+﻿<div class="row form-group">
+    <div class="col-md-4 left-label">
+        <label class="pull-right">
+            Nhóm đối tác
+        </label>
+    </div>
+    <div class="col-md-8">
+
+        <select class="form-control" id="slCounterPartyGroup">
+            <option value="">Chọn nhóm đối tác</option>
+            @Html.Raw(Html.Action("_loadCounterPartyGroup", "Manager", new { area = "CounterParty" }))
+        </select>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-md-4 left-label">
+        <label class="pull-right">
+            Đối tác
+        </label>
+    </div>
+    <div class="col-md-8">
+        <select class="form-control" id="slCounterParty"></select>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-md-8 offset-4">
+        <button class="btn btn-primary " id="btnCountinue" name="btnCountinue"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Tiếp tục</button>
+    </div>
+</div>
+

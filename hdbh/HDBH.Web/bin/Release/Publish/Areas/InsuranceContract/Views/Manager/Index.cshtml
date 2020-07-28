@@ -1,0 +1,305 @@
+﻿@using HDBH.Models.DatabaseModel
+@{
+    /// auth Dutp 13/7
+
+    ///List branch
+    var lstBranch = new List<BranchDetailModel>();
+    if (ViewBag.lstBranch != null)
+    {
+        lstBranch = ViewBag.lstBranch;
+    }
+    ///List Contract type
+    var lstContractType = new List<InsuranceContractTypeModel>();
+    if (ViewBag.lstContractType != null)
+    {
+        lstContractType = ViewBag.lstContractType;
+    }
+
+    ///List Contract Form
+    var lstContractForm = new List<InsuranceContractFormModel>();
+    if (ViewBag.lstContractForm != null)
+    {
+        lstContractForm = ViewBag.lstContractForm;
+    }
+
+    ///List Status
+    //var lstStatus = new List<MDProcessStatus>();
+    //if (ViewBag.lstStatus != null)
+    //{
+    //    lstStatus = ViewBag.lstStatus;
+    //}
+
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+</style>
+
+@section pageTitle {
+    <div class="tabs tabs-style-tzoid">
+        <nav>
+            <ul>
+                <li class="tab-current"><a><span class="glyphicon glyphicon-th-list"></span><span>Danh sách HĐ</span></a> </li>
+                <li><a><span class="glyphicon glyphicon-plus-sign"></span><span>Tạo mới HĐ</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    @*@Html.Partial("~/Views/Home/_renderSiteMap.cshtml", lsSiteMap)*@
+}
+<div id="rootList">
+    <input hidden value="@RDAuthorize.UserId" id="userId" name="userId" />
+    <input hidden value="" id="contractFormCode" name="contractFormCode" />
+    @*<form id="frmSearch">*@
+    <div class="col-md-12">
+        <form id="frmSearch">
+            <fieldset class="">
+
+                <!--Row 1-->
+                <div class="row form-group">
+                    <div class="pull-right col-md-2">
+                        <label>
+                            @Html.Localize("lbl_fromDate")
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group date" data-provide="datepicker">
+                            <input class="datepicker form-control" id="fromDate" name="fromDate" />
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pull-right col-md-1">
+                        <label class="">
+                            @Html.Localize("lbl_toDate")
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group date" data-provide="datepicker">
+                            <input class="datepicker form-control" id="toDate" name="toDate" />
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <div class="custom-control custom-radio checkbox-inline">
+                                    <input type="radio" class="custom-control-input" name="isInau" id="actived" value="0" checked onchange="insurance.LoadStatus()" />
+                                    <label class="custom-control-label" for="actived">Đã duyệt</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="custom-control custom-radio checkbox-inline">
+                                    <input type="radio" class="custom-control-input" name="isInau" id="handing" value="1" onchange="insurance.LoadStatus()" />
+                                    <label class="custom-control-label" for="handing">Đang xử lý</label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--Row 2-->
+                <div class="row form-group">
+                    <div class=" col-md-2">
+                        <label class="">
+                            Số hợp đồng
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="insuranceContractNo" name="insuranceContractNo" />
+                    </div>
+
+                    <div class="pull-right col-md-1">
+                        <label class="">
+                            Số hồ sơ gốc
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="refInsuranceNo" name="refInsuranceNo" />
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="pull-right">
+                            <label class="">
+                                Loại hợp đồng
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="contractTypeCode" name="contractTypeCode" class="form-control">
+                            @if (lstContractType != null)
+                            {
+                                <option value="">--Tất cả--</option>
+                                foreach (var item in lstContractType)
+                                {
+                                    <option value="@item.contractTypeCode">@item.contractTypeName</option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="">--Tất cả--</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <!--Row 3-->
+                <div class="row form-group">
+                    <div class="pull-right col-md-2">
+                        <label class="">
+                            User cập nhật
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="userUpdated" name="userUpdated" />
+                    </div>
+
+                    <div class="pull-right col-md-1">
+                        <label class="">
+                            Trạng thái
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <select id="processStatusList" name="processStatusList" class="form-control" multiple="multiple">
+                            @*<option value="">--Tất cả--</option>
+                                @if (lstStatus != null)
+                                {
+                                    foreach (var item in lstStatus)
+                                    {
+                                        <option value="@item.processStatusCode">@item.processStatusName</option>
+                                    }
+                                }*@
+                        </select>
+                    </div>
+
+                    <div class="col-md-2" style="width:100%">
+                        <div class="pull-right">
+                            <label class="">
+                                Số cif khách hàng
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="customerCif" name="customerCif" />
+                    </div>
+                </div>
+
+                <!--Row 4-->
+                <div class="row form-group">
+                    <div class="pull-right col-md-2">
+                        <label class="">
+                            Tình trạng tái tục
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <select id="renewStatus" name="renewStatus" class="form-control">
+                            <option value=-1>Tất cả</option>
+                            <option value=0>Chưa đến hạn tái tục</option>
+                            <option value=1>Đến hạn tái tục</option>
+                        </select>
+                    </div>
+
+                    <div class="pull-right col-md-1">
+                        <label class="">
+                            Chi nhánh
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <select id="branchCode" name="branchCode" class="form-control">
+                            @if (lstBranch != null)
+                            {
+                                if (RDAuthorize.isHO == 1)
+                                {
+                                    <option value="">--Tất cả--</option>
+                                    foreach (var item in lstBranch)
+                                    {
+                                        <option value="@item.branchCode" @(item.branchCode == RDAuthorize.BranchCode ? "selected" : "")>@item.branchName</option>
+                                    }
+                                }
+                                else if (RDAuthorize.isHO == 0)
+                                {
+                                    <option value="@RDAuthorize.BranchCode" disabled>@RDAuthorize.BranchName</option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="@RDAuthorize.BranchCode" disabled>@RDAuthorize.BranchName</option>
+                            }
+
+                        </select>
+                    </div>
+
+                    <div class="pull-right col-md-2">
+
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" id="btnSearch" name="btnSearch" class="btn btn-primary"><i class="fa fa-search"></i>Tìm kiếm</button>
+                        <button type="button" id="btnExport" name="btnExport" class="btn btn-success"><i class="fa fa-file-excel-o"></i>Xuất Excel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <div class="row col-md"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" id="btnAdd" name="btnAdd" class="btn btn-success" data-title="TÌM KIẾM DANH SÁCH KHÁCH HÀNG" data-toggle="modal" data-target="#mdModal" data-template="~/Areas/InsuranceContract/Views/Shared/_createInsuranceContract.cshtml"><i class="glyphicon glyphicon-plus"></i> Tạo mới HĐ</button>
+                <button type="button" id="btnRenew" name="btnRenew" class="btn btn-success" disabled><i class="fa fa-recycle"></i> Tái tục HĐ</button>
+                <button type="button" id="btnEdit" name="btnEdit" class="btn btn-warning" disabled><i class="glyphicon glyphicon-edit"></i> Chỉnh sửa HĐ</button>
+                <button type="button" id="btnClose" name="btnClose" class="btn btn-danger" disabled><i class="glyphicon glyphicon-folder-close"></i> Đóng HĐ</button>
+                <button type="button" id="btnCreateReceipt" name="btnCreateReceipt" class="btn btn-success" disabled><i class="glyphicon glyphicon-plus"></i> Tạo phiếu thu</button>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div id="gridInsurance">
+                    @Html.Partial("~/Areas/InsuranceContract/Views/Manager/_tablelist.cshtml")
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="paging withMargin">
+        <ul id="Pagination"></ul>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/InsuranceContract/InsuranceList.js"></script>
+    <script src="~/Scripts/InsuranceContract/InsuranceFunctions.js"></script>
+    <!--Script payment thêm phiếu thu-->
+    <script src="~/Scripts/Payment/PaymentActions.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#processStatusList').select2({
+                width: "100%"
+            });
+            $('#renewStatus').select2({
+                width: "100%"
+            });
+            $('#contractTypeCode').select2({
+                width: "100%"
+            });
+            $('#branchCode').select2({
+                width: "100%"
+            });
+
+            //setrangedate($('#fromDate'), $('#toDate'));
+            insuranceList.Init();
+        });
+    </script>
+}

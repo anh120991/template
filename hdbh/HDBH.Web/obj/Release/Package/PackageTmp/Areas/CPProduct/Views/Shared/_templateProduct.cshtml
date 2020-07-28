@@ -1,0 +1,27 @@
+﻿@model HDBH.Models.ViewModel.CPProductImportProductModel
+    @{ 
+        string viewModel = ViewBag.viewMode;
+        bool isUpdate = false;
+        if(Model != null && !string.IsNullOrEmpty(Model.productCode))
+        {
+            if (!string.IsNullOrEmpty(viewModel))
+            {
+                isUpdate = true;
+            }
+        }
+
+    }
+    <td>
+        <input type="text" name="productCode" class="form-control text-uppercase" maxlength="20" value="@Model.productCode" @(isUpdate ? "disabled" : "") />
+        <input type="hidden" name="productId" value="@Model.productId" />
+        <input type="hidden" name="productAutoId" value="@Model.productAutoId" />
+        <input type="hidden" name="isUsed" value="@Model.isUsed" />
+    </td>
+<td>
+    <input type="text" name="productName" class="form-control" value="@Model.productName" />
+</td>
+<td class="text-center controlRow">
+    <label name="addRow" class="actionProduct bg-success @(Model.isShowAdd ? "" : "hidden")"><i class="fa fa-plus" aria-hidden="true"></i></label>
+    <label name="removeRow" class="actionProduct bg-danger  @(Model.isShowRemove ? "" : "hidden")"><i class="fa fa-minus" aria-hidden="true"></i></label>
+    <label name="warningRow" class="actionProduct bg-warning @(!string.IsNullOrEmpty(Model.errorMessage) ? "" :  "hidden")" title="@Model.errorMessage"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></label>
+</td>

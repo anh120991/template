@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C18AE1A-D9B9-47B1-ABBD-22B9CC68C3DE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HDBH.Models</RootNamespace>
+    <AssemblyName>HDBH.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractHelper\AbstractGlobalConfig.cs" />
+    <Compile Include="AttributeActionResult.cs" />
+    <Compile Include="Constant\CachedKey.cs" />
+    <Compile Include="Constant\CounterPartyStatusEnum.cs" />
+    <Compile Include="Constant\ViewModeCons.cs" />
+    <Compile Include="CPProductDetailModel.cs" />
+    <Compile Include="DatabaseModel\BranchModel.cs" />
+    <Compile Include="DatabaseModel\CounterParty\CounterPartySelectItemModel.cs" />
+    <Compile Include="DatabaseModel\CPProduct\CPProductApproveModel.cs" />
+    <Compile Include="DatabaseModel\CPProduct\CPProductSearchModel.cs" />
+    <Compile Include="DatabaseModel\CollateralItemModel.cs" />
+    <Compile Include="DatabaseModel\InsuranceContract\InsuranceContractFormModel.cs" />
+    <Compile Include="DatabaseModel\InsuranceContract\InsuranceContractTypeModel.cs" />
+    <Compile Include="DatabaseModel\InsuranceContract\InsuranceExceptTypeModel.cs" />
+    <Compile Include="DatabaseModel\MDModel.cs" />
+    <Compile Include="DatabaseModel\Payment\GetListScheduleUnpaid.cs" />
+    <Compile Include="DatabaseModel\RoleModel.cs" />
+    <Compile Include="DatabaseModel\UserSearchModel.cs" />
+    <Compile Include="ViewModel\CPProduct\CPProductGetDetailViewModel.cs" />
+    <Compile Include="ViewModel\CPProduct\CPProductSearchViewModel.cs" />
+    <Compile Include="DatabaseModel\CPProduct\CPProductInsertModel.cs" />
+    <Compile Include="DatabaseModel\CustomerModel.cs" />
+    <Compile Include="DatabaseModel\CounterParty\CounterPartyDetailModel.cs" />
+    <Compile Include="DatabaseModel\CounterParty\CounterPartyGroupModel.cs" />
+    <Compile Include="DatabaseModel\CounterParty\CounterPartySearchModel.cs" />
+    <Compile Include="DatabaseModel\ModuleModel.cs" />
+    <Compile Include="Extensions\DateTimeExtenstion.cs" />
+    <Compile Include="HelperModel\AttributeActionResult.cs" />
+    <Compile Include="HelperModel\ResultModel.cs" />
+    <Compile Include="Implementation\GlobalConfigHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AttachmentViewModel.cs" />
+    <Compile Include="ViewModel\CounterParty\CounterPartyDetailInsertModel.cs" />
+    <Compile Include="ViewModel\CounterParty\CounterPartyGetDetailModel.cs" />
+    <Compile Include="ViewModel\CounterParty\CounterPartyListSeachModel.cs" />
+    <Compile Include="ViewModel\CPProduct\CPProductImportCommisionListModel.cs" />
+    <Compile Include="ViewModel\CPProduct\CPProductImportProductModel.cs" />
+    <Compile Include="ViewModel\CPProduct\CPProductInsertViewModel.cs" />
+    <Compile Include="ViewModel\CPProduct\CPProductViewModel.cs" />
+    <Compile Include="ViewModel\UserImportTempModel.cs" />
+    <Compile Include="ViewModel\CustomerInputSearchModel.cs" />
+    <Compile Include="ViewModel\InsuranceContractModel\InsurContractCollateralInsertModel.cs" />
+    <Compile Include="ViewModel\InsuranceContractModel\ScheduleInsertViewModel.cs" />
+    <Compile Include="ViewModel\InsuranceContractModel\ScheduleListViewModel.cs" />
+    <Compile Include="ViewModel\InsuranceContractModel\InsuranceContractCollateralViewModel.cs" />
+    <Compile Include="ViewModel\InsuranceContractModel\ApproveUpdateInsuranceContractModel.cs" />
+    <Compile Include="ViewModel\InsuranceContractModel\InsuraceContractDetailModel.cs" />
+    <Compile Include="ViewModel\InsuranceContractModel\InsuranceContractSearchModel.cs" />
+    <Compile Include="ViewModel\InsuranceContractModel\InsuranceContractProductViewModel.cs" />
+    <Compile Include="ViewModel\InsuranceContractModel\InsuranceContractViewModel.cs" />
+    <Compile Include="ViewModel\Payment\ApprovePaymentModel.cs" />
+    <Compile Include="ViewModel\Payment\InsertUpdatePaymentModel.cs" />
+    <Compile Include="ViewModel\Payment\PaymentDetailModel.cs" />
+    <Compile Include="ViewModel\Payment\PaymentSearchListModel.cs" />
+    <Compile Include="ViewModel\Payment\RepaymentSchedule.cs" />
+    <Compile Include="ViewModel\Payment\PaymentViewDetailModel.cs" />
+    <Compile Include="ViewModel\Role\RoleViewModel.cs" />
+    <Compile Include="ViewModel\SearchPagging.cs" />
+    <Compile Include="ViewModel\UserLoginModel.cs" />
+    <Compile Include="ViewModel\User\DetailUserViewModel.cs" />
+    <Compile Include="ViewModel\User\UserInsertViewModel.cs" />
+    <Compile Include="ViewModel\User\UserSearchViewModel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

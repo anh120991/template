@@ -1,0 +1,169 @@
+﻿@using HDBH.Models.DatabaseModel
+@{
+    ViewBag.Title = "PaymentScheduleManagement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var lstBranch = new List<BranchDetailModel>();
+    if (ViewBag.lstBranch != null)
+    {
+        lstBranch = ViewBag.lstBranch;
+    }
+}
+@section pageTitle {
+    <div class="tabs tabs-style-tzoid">
+        <nav>
+            <ul>
+                <li class="tab-current"><a><span class=""></span><span>Theo dõi tình hình thanh toán phí</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+}
+<div id="rootList">
+    <div class="col-md-12">
+        <form id="frmSearch">
+            <fieldset class="">
+
+                <!--Row1-->
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        <label class="fa-pull-right">Từ ngày</label>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group date" data-provide="datepicker">
+                            <input class="datepicker form-control" id="fromDate" name="fromDate" />
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="fa-pull-right">Đến ngày</label>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group date" data-provide="datepicker">
+                            <input class="datepicker form-control" id="toDate" name="toDate" />
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Row2-->
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        <label class="pull-right">Số hợp đồng</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input id="insuranceContractNo" name="insuranceContractNo" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="pull-right">Số Cif</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input id="customerCif" name="customerCif" class="form-control" />
+                    </div>
+                </div>
+
+                <!--Row3-->
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        <label class="pull-right">Tình trạng thanh toán</label>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="paymentStatus" name="paymentStatus" class="form-control">
+                            <option value="">Tất cả</option>
+                            <option value="OOD">Quá hạn thanh toán</option>
+                            <option value="CS">Sắp đến hạn thanh toán</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="pull-right">Chi nhánh</label>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="paymentStatus" name="paymentStatus" class="form-control">
+                            @if (lstBranch != null)
+                            {
+                                if (RDAuthorize.isHO == 1)
+                                {
+                                    <option value="">--Tất cả--</option>
+                                    foreach (var item in lstBranch)
+                                    {
+                                        <option value="@item.branchCode" @(item.branchCode == RDAuthorize.BranchCode ? "selected" : "")>@item.branchName</option>
+                                    }
+                                }
+                                else if (RDAuthorize.isHO == 0)
+                                {
+                                    <option value="@RDAuthorize.BranchCode" disabled>@RDAuthorize.BranchName</option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="@RDAuthorize.BranchCode" disabled>@RDAuthorize.BranchName</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-md-2 pull-left">
+                        <button id="btnSearch" name="btnSearch" class="btn btn-primary"><i class="fa fa-search"></i> Tìm kiếm</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" id="btnImport" name="btnImport" class="btn btn-primary pull-left"><i class="glyphicon glyphicon-plus"></i> Nhập TT đóng phí</button>
+            </div>
+        </div>
+
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table id="schedulePayment_tblist" class="list-table" style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th scope="col">Chọn</th>
+                                <th scope="col">Số HĐBH</th>
+                                <th scope="col">Kỳ số</th>
+                                <th scope="col">Ngày thanh toán dự kiến</th>
+                                <th scope="col">Tổng phí dự thu (VNĐ)</th>
+                                <th scope="col">Khách hàng</th>
+                                <th scope="col">Tình trạng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section scripts {
+
+    <script src="~/Scripts/Payment/PaymentScheduleManagement.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#paymentStatus').select2({
+                width: "100%"
+            });
+            $('#externalRepayment').select2({
+                width: "100%"
+            });
+            //$('#contractTypeCode').select2({
+            //    width: "100%"
+            //});
+            //$('#branchCode').select2({
+            //    width: "100%"
+            //});
+
+            //setrangedate($('#fromDate'), $('#toDate'));
+        });
+    </script>
+}

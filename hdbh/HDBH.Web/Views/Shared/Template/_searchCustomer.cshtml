@@ -1,0 +1,56 @@
+﻿<div class="row form-group">
+    <div class="col-md-1 left-label">
+        <label class="pull-right">
+            Mã CIF
+        </label>
+    </div>
+    <div class="col-md-3">
+        <input type="text" id="pCif" name="pCif" value="" class="form-control" />
+
+    </div>
+
+    <div class="col-md-3 left-label">
+        <label class="pull-right">
+            Tên khách hàng/Tên viết tắt
+        </label>
+
+    </div>
+    <div class="col-md-3">
+        <input type="text" id="pName" name="pName" value="" class="form-control" />
+    </div>
+    <div class="col-md-2">
+        <div class="right-control">
+            @Html.SearchButton("btnPopupSearch")
+        </div>
+    </div>
+</div>
+
+@*<div class="row mt-5">
+        <div class="col-md-1 offset-11">
+            <a class="btn btn-primary " id="btnAdd" name="btnAdd" href="@Url.RouteUrl("CounterParty_create")"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Thêm mới</a>
+        </div>
+    </div>*@
+<fieldset class="mt-5">
+    <legend>Danh sách tìm kiếm</legend>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="list-table" id="customerPopupTable" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Chọn</th>
+                        <th>Số Cif</th>
+                        <th>Tên đầy đủ</th>
+                        <th>Mã REF T24</th>
+                        <th>Tên rút gọn</th>
+                        <th>Người cập nhật</th>
+                        <th>Ngày cập nhật</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</fieldset>
+

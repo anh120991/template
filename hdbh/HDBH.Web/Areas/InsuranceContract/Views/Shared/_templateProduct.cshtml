@@ -1,0 +1,53 @@
+﻿@model HDBH.Models.ViewModel.InsuranceContractProductViewModel
+@{
+    bool onlyRead = false;
+    if (Model != null)
+    {
+        onlyRead = ViewBag.viewMode == HDBH.Models.Constant.ViewModeCons.APPROVE || ViewBag.viewMode == HDBH.Models.Constant.ViewModeCons.VIEW ? true : false;
+    }
+    string ExceptCode = ViewBag.ExceptCode;
+    string cpGroupCode = !string.IsNullOrEmpty(ExceptCode) && ExceptCode == "UNCONTRACT_CP" ? "UNCONTRACT" : "CONTRACTED";
+}
+<td>
+    <select class="form-control" name="counterPartyId" @(onlyRead ? "disabled" : "")>
+        <option value="">Chọn đối tác</option>
+        @Html.Action("_getListCounterPartyComboBox", "Manager", new { area = "CounterParty", cpGroupCode = cpGroupCode, selected = Model.counterPartyId })
+    </select>
+</td>
+<td>
+    <input type="text" name="paymentAccount" class="form-control" value="@Model.paymentAccount" disabled />
+</td>
+<td>
+    <input type="text" name="subCompanyName" class="form-control" value="@Model.subCompanyName" @(onlyRead ? "readonly" : "") />
+</td>
+<td>
+    <select class="form-control" name="productId" @(onlyRead ? "disabled" : "")>
+        @Html.Action("_getListCpProdForContract", "Manager", new { area = "InsuranceContract", counterPartyId = Model.counterPartyId, selected = Model.productId })
+    </select>
+    <input type="hidden" name="commisionId" value="@Model.commisionId" />
+    <input type="hidden" name="commisRate" value="@Model.commisRate" />
+    <input type="hidden" name="insProdId" value="@Model.insProdId" />
+</td>
+<td>
+    <input type="text" name="productName" class="form-control" disabled />
+</td>
+<td>
+    <input type="text" name="insurancePercent" class="form-control" value="@Model.insurancePercent" @(onlyRead ? "readonly" : "") />
+</td>
+<td>
+    <input type="text" name="feeAmount" class="form-control numberinput2 changeValue" value="@Model.feeAmount" @(onlyRead ? "readonly" : "") />
+</td>
+<td>
+    <input type="text" name="feeVatAmount" class="form-control numberinput2 changeValue" value="@Model.feeVatAmount" @(onlyRead ? "readonly" : "") />
+</td>
+<td>
+    <input type="text" name="feeAfterVat" disabled class="form-control" value="@(Model.feeAmount + Model.feeVatAmount)" @(onlyRead ? "readonly" : "") />
+</td>
+@if (!onlyRead)
+{
+    <td class="text-center controlRow">
+        <label name="addRow" class="actionProduct bg-success @(Model.isShowAdd ? "" : "hidden")"><i class="fa fa-plus" aria-hidden="true"></i></label>
+        <label name="removeRow" class="actionProduct bg-danger  @(Model.isShowRemove ? "" : "hidden")"><i class="fa fa-minus" aria-hidden="true"></i></label>
+    </td>
+}
+

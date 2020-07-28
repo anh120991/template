@@ -1,0 +1,13 @@
+﻿@model List<SelectListItem>
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+        <div class="col-md-6">
+            <div class="custom-control custom-checkbox checkbox-inline">
+                <input type="checkbox" class="custom-control-input" name="chkOption" id="handing" value="@item.Value" />
+                <label class="custom-control-label" for="handing">@item.Text</label>
+            </div>
+        </div>
+    }
+}

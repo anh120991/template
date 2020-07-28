@@ -1,0 +1,173 @@
+﻿ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 09:17:22 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 09:44:13 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:18:31 ((!)) ManagerController => ImportProduct
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.ComponentModel.PropertyDescriptorCollection.get_Item(Int32 index)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 34
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 184
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:20:25 ((!)) ManagerController => ImportProduct
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.ComponentModel.PropertyDescriptorCollection.get_Item(Int32 index)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 34
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 184
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:20:42 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 30 is not a valid value for DateTime. ---> System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.NullableConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 296
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:20:58 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 30 is not a valid value for DateTime. ---> System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.NullableConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 296
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:26:47 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:27:13 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 30 is not a valid value for DateTime. ---> System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.NullableConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:27:35 ((!)) ManagerController => ImportProduct
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.ComponentModel.PropertyDescriptorCollection.get_Item(Int32 index)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 34
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 186
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:27:52 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 30 is not a valid value for DateTime. ---> System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.NullableConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:28:01 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 30 is not a valid value for DateTime. ---> System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.NullableConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:32:24 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:49:38 ((!)) ManagerController => ImportProduct
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.ComponentModel.PropertyDescriptorCollection.get_Item(Int32 index)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 34
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 186
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:50:31 ((!)) ManagerController => ImportProduct
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.ComponentModel.PropertyDescriptorCollection.get_Item(Int32 index)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 34
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 186
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:54:17 ((!)) ManagerController => ImportProduct
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.ComponentModel.PropertyDescriptorCollection.get_Item(Int32 index)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 34
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 186
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:58:22 ((!)) ManagerController => ImportProduct
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.ComponentModel.PropertyDescriptorCollection.get_Item(Int32 index)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 34
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 186
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 10:58:36 ((!)) ManagerController => ImportProduct
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.ComponentModel.PropertyDescriptorCollection.get_Item(Int32 index)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 34
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 186
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 11:00:11 ((!)) ManagerController => ImportProduct
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.ComponentModel.PropertyDescriptorCollection.get_Item(Int32 index)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 34
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 186
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 11:00:22 ((!)) ManagerController => ImportProduct
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.ComponentModel.PropertyDescriptorCollection.get_Item(Int32 index)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 34
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 186
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 11:01:13 ((!)) ManagerController => ImportProduct
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.ComponentModel.PropertyDescriptorCollection.get_Item(Int32 index)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 34
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportProduct(HttpPostedFileBase importProduct) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 186
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 11:04:09 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 30 is not a valid value for DateTime. ---> System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.NullableConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 11:05:00 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 30 is not a valid value for DateTime. ---> System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.NullableConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 11:05:30 ((!)) ManagerController => ImportCommisionList
+System.FormatException: 30 is not a valid value for DateTime. ---> System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.NullableConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at HDBH.Lib.DataTransformer.GetList[T](DataTable dt) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\DataTransformer.cs:line 38
+   at HDBH.Lib.Reader.GetData[T](IDataTransformer transformer, Int32 sheetNumber, Int32 intRemoveRows) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\HDBH.Lib\Reader.cs:line 88
+   at HDBH.CPProduct.Controllers.ManagerController.ImportCommisionList(HttpPostedFileBase importCommisionList) in D:\WorkSpace\HopDongBaoHiem\SourceCode\dotNET\HDBH_New\SubProject\HDBH.AwardManage\Controllers\ManagerController.cs:line 298
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 11:08:41 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 11:23:21 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 11:24:50 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 13:22:01 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 13:59:42 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 14:36:12 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 15:20:28 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 15:30:55 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 15:56:29 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 15:56:33 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 16:09:09 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 16:52:01 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 17:01:19 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 17:02:34 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  07/22/2020 18:02:21 ((!)) isValid: True

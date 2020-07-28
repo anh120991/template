@@ -1,0 +1,125 @@
+USE [HDBH]
+GO
+/****** Object:  StoredProcedure [dbo].[updateUserRoleList]    Script Date: 28/07/2020 3:30:46 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[updateUserRoleList]
+@userId varchar(30),
+@branchCode varchar(9),
+@userList nvarchar(max),
+@resultMessage nvarchar(max) out,
+@resultCode int out
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+
+USE [HDBH]
+GO
+/****** Object:  StoredProcedure [dbo].[updateUser]    Script Date: 28/07/2020 6:17:25 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[updateUser]
+@userName varchar(30),
+@fullName nvarchar(200),
+@officerCode varchar(30) = NULL,
+@userBranchCode varchar(9),
+@phoneNumber varchar(20) = NULL,
+@email varchar(50) = NULL,
+@isActive int,
+@isDelete int,
+@userId varchar(30),
+@branchCode varchar(9),
+@userRoleList nvarchar(max),
+@resultMessage nvarchar(max) out,
+@resultCode int out
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+
+
+USE [HDBH]
+GO
+/****** Object:  StoredProcedure [dbo].[searchRole]    Script Date: 28/07/2020 6:17:49 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[searchRole]
+@roleCode varchar(50) = NULL,
+@roleName nvarchar(200) = NULL,
+@isActive int = -1,
+@userId varchar(30),
+@pageNumber int,
+@pageSize int,
+@resultMessage nvarchar(max) out,
+@resultCode int out
+AS
+BEGIN
+
+
+USE [HDBH]
+GO
+/****** Object:  StoredProcedure [dbo].[getListPermission]    Script Date: 28/07/2020 6:18:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[getListPermission]
+@resultMessage nvarchar(max) out,
+@resultCode int out
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SET @resultCode = 99999;
+	SET @resultMessage = '';
+	BEGIN TRY
+
+
+USE [HDBH]
+GO
+/****** Object:  StoredProcedure [dbo].[insertRolePermission]    Script Date: 28/07/2020 6:20:00 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[insertRolePermission]
+@roleCode varchar(50),
+@roleName nvarchar(200),
+@userId varchar(30),
+@branchCode varchar(9),
+@permissionList nvarchar(max),
+@resultMessage nvarchar(max) out,
+@resultCode int out
+AS
+
+
+USE [HDBH]
+GO
+/****** Object:  StoredProcedure [dbo].[updateRolePermission]    Script Date: 28/07/2020 6:20:24 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[updateRolePermission]
+@roleCode varchar(50),
+@roleName nvarchar(200),
+@userId varchar(30),
+@branchCode varchar(9),
+@permissionList nvarchar(max),
+@resultMessage nvarchar(max) out,
+@resultCode int out
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+
+
+
+

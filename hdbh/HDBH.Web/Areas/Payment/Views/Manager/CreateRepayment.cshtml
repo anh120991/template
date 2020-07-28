@@ -1,0 +1,207 @@
+﻿@model HDBH.Models.ViewModel.Payment.InsertModelView
+@using HDBH.Models.ViewModel.Payment
+@{
+    ViewBag.Title = "CreateRepayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    bool isApprove = false;
+    bool isView = false;
+    if (ViewBag.viewMode != null)
+    {
+        isApprove = (ViewBag.viewMode == "APPROVE" || ViewBag.viewMode == "VIEW") ? true : false;
+        isView = (ViewBag.viewMode == "VIEW") ? true : false;
+    }
+
+    var fileList = ViewBag.fileList != null ? (List<HDBH.Models.ViewModel.AttachmentViewModel>)ViewBag.fileList : new List<HDBH.Models.ViewModel.AttachmentViewModel>();
+
+    var lstPayment = ViewBag.lstPayment != null ? (List<HDBH.Models.ViewModel.SchedulePaymentDetailItemViewModel>)ViewBag.lstPayment : new List<HDBH.Models.ViewModel.SchedulePaymentDetailItemViewModel>();
+}
+
+<style>
+    /*.actionProduct {
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 50%;
+            cursor: pointer;
+        }*/
+
+    .bg-title {
+        background: #f0f0f0;
+        font-weight: bold;
+    }
+
+    .td-title {
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+
+<div id="formInsert">
+
+    <input type="hidden" id="insuranceId" name="insuranceId" value="@Model.insuranceId" />
+    <input type="hidden" id="mode" name="mode" />
+
+    <div class="mt-5">
+        <fieldset>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label class="pull-right">Số hợp đồng</label>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group ">
+                        <input type="hidden" id="counterPartyId" name="counterPartyId">
+                        <input type="text" id="insuranceContractNo" name="insuranceContractNo" class="form-control" value="@Model.insuranceContractNo" />
+                        <div class="input-group-btn">
+                            <a id="btnSearchContract" class="btn btn-default form-control"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label class="pull-right">Mã khách hàng</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="customerCif" name="customerCif" class="form-control" value="@Model.customerCif" />
+                </div>
+                <div class="col-md-2">
+                    <label class="pull-right">Tên khách hàng</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="customerName" name="customerName" class="form-control" value="@Model.customerName" />
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="mt-5">
+        <fieldset>
+            <legend>Thông tin kỳ phí</legend>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label class="pull-right">Kỳ số</label>
+                </div>
+                <div class="col-md-3">
+                    <select id="scheduleId" name="scheduleId" class="form-control">
+                        @if (Model.scheduleList != null)
+                        {
+                            foreach (var item in Model.scheduleList)
+                            {
+                                <option schedulePaymentDate="@item._schedulePaymentDate" paymentList="@Newtonsoft.Json.JsonConvert.SerializeObject(Model.paymentDetailList)" value="@item.scheduleId">@item.scheduleId</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="pull-right">Ngày thanh toán dự kiến</label>
+                </div>
+                <div class="col-md-3">
+                    <input id="schedulePaymentDate" name="schedulePaymentDate" class="form-control" value="">
+
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table id="Repayment_tblist" class="list-table" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Mã sản phẩm</th>
+                                    <th scope="col">Tên sản phẩm</th>
+                                    <th scope="col">Tiền thanh toán chưa VAT</th>
+                                    <th scope="col">Tiền VAT</th>
+                                    <th scope="col">Tiền thanh toán sau VAT</th>
+                                </tr>
+                            </thead>
+                            <tbody id="createTbody">
+                                @Html.Partial("_schedulePaymentInfo", lstPayment)
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="mt-5">
+        <fieldset>
+            <legend>Thông tin kỳ thanh toán</legend>
+            <div class="col-md-12">
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <div class="row form-group">
+                            <div class="col-md-3">
+
+                                <label class="pull-right"> Đóng phí ngoài</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="checkbox" class="pull-left" id="isExternalRepayment" name="isExternalRepayment" />
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-3">
+                                <label id="lblFttNo" class="pull-right">Số chứng từ của chứng từ đính kèm</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" onchange="paymentActions.validfttno()" id="ftttNo" name="ftttNo" />
+                            </div>
+                            <div class="col-md-3">
+                                <label class="pull-right">Ngày đóng phí trên chứng từ đính kèm</label>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-group date" data-provide="datepicker">
+                                    <input class="datepicker form-control" id="paymentDate" name="paymentDate" />
+                                    <div class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-3">
+                                <label class="pull-right">Tổng tiền thực thụ</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control pull-right" id="totalAmount" name="totalAmount" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="mt-5">
+        <fieldset>
+            <div class="row">
+                <div class="col-md-8 offset-2">
+                    @Html.Partial("~/Views/Common/_attachFiles.cshtml", fileList)
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="mt-5">
+        <div class="row form-group">
+            <div class="right-control pull-right">
+                <button type="button" id="btnSkip" name="btnSkip" onclick="insurance.Search()" class="btn btn-warning">Thoát</button>
+                <button type="button" id="btnInsert" name="btnInsert" onclick="paymentActions.Insert()" class="btn btn-primary">Trình duyệt</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts {
+    <script src="~/Scripts/Payment/PaymentActions.js"></script>
+    <script src="~/Scripts/Payment/paymentList.js"></script>
+    <script src="~/Scripts/InsuranceContract/InsuranceFunctions.js"></script>
+    <script src="~/Scripts/JScustom/diacritics.js"></script>
+    <script>
+        attachFile.init();
+    </script>
+}
+

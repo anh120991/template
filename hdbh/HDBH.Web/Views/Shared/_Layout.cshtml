@@ -1,0 +1,255 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Hợp đồng tài sản đảm bảo</title>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="~/favicon.ico" rel="icon" />
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <!-- Libraries CSS Files -->
+    <link href="/content/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/content/lib/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="/content/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/content/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/content/lib/modal-video/css/modal-video.min.css" rel="stylesheet">
+    <link href="~/Content/plugins/Messagebox/Lolibox/lobibox.css" rel="stylesheet" />
+    <link href="~/Content/plugins/DateTimePicker/jquery.datetimepicker.css" rel="stylesheet" />
+
+    <link href="~/Content/lib/bootstrap/css/bootstrap-glyphicons.css" rel="stylesheet" />
+    <link href="~/Content/plugins/UploadFiles/component.css" rel="stylesheet" />
+    @Styles.Render("~/css")
+    @Styles.Render("~/style/datatable")
+    <link href="~/Content/plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/datatables/css/jquery.dataTables.custom.min.css" rel="stylesheet" />
+    <link href="~/Content/css/responsive.css" rel="stylesheet" />
+    <link href="~/Content/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <link href="~/Content/css/style-dev.css" rel="stylesheet" />
+
+
+    <!-- =======================================================
+      Theme Name: eStartup
+      Theme URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
+      Author: BootstrapMade.com
+      License: https://bootstrapmade.com/license/
+    ======================================================= -->
+</head>
+
+<body>
+
+    <div class="loadicon" style="display: none;">
+    </div>
+
+    <header id="header" class="header header-hide">
+        <div class="line-head">
+            <div class="container-fluid">
+                <div class="pull-right user-control">
+
+                    <div class="dropdown">
+                        <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @if (HttpContext.Current.Session[HDBH.Authorize.Models.SessionConstant.userid] != null)
+                                {
+                                    <span>Xin chào: </span> <b>@RDAuthorize.UserId<i class="fa fa-sort-desc" aria-hidden="true"></i></b>
+                                }
+
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            @*<a class="dropdown-item"><i class="fa fa-user-circle" aria-hidden="true"></i> @RDAuthorize.fullname</a>*@
+                            <hr />
+                            <a class="dropdown-item" href="/Account/LogOut">Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container-fluid">
+            <div class="web-title">
+                <div class="lg-title">
+                    <div id="logo" class="pull-left">
+                        <a href="/">
+                            <img src="~/Content/images/based/OCB-logo.png" class="img-responsive" />
+                        </a>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+                        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+                    </div>
+                    <div id="app-title" class="pull-left">
+                        <img src="~/Content/images/based/app-title.png" class="img-responsive" />
+
+                    </div>
+                </div>
+                <div class="sm-title">
+                    <div class="pull-left">
+                        <img src="~/Content/images/based/logo-res.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="right-clock pull-right">
+                <p id="date"></p>
+                <div id="clock">
+                    <p class="unit" id="hours"></p>
+                    <p class="unit" id="minutes"></p>
+                    <p class="unit" id="seconds"></p>
+                    <p class="unit" id="ampm"></p>
+                </div>
+            </div>
+            <nav id="nav-menu-container">
+                @if (HttpContext.Current.Session[HDBH.Authorize.Models.SessionConstant.userid] != null)
+                {
+                    @Html.Action("_loadMenu", "Home", new { area = "" });
+                }
+
+            </nav><!-- #nav-menu-container -->
+
+        </div>
+    </header><!-- #header -->
+    <content>
+        <div class="container-fluid body-content">
+
+            <div class="page-info">
+                @RenderSection("pageTitle", required: false)
+
+            </div>
+
+            <!--SITE MAP OF PAGE-->
+            <div class="page-siteMap">
+                @RenderSection("siteMap", required: false)
+            </div>
+            <!--END SITE MAP-->
+            <div class="wraper">
+
+
+                @RenderBody()
+            </div>
+            <div id="popupArea">
+                @Html.Partial("~/Views/Shared/_popup.cshtml")
+            </div>
+
+
+
+        </div>
+
+    </content>
+    <button onclick="topFunction()" id="scrollTop" title="Go to top"><span class="glyphicon glyphicon-arrow-up"></span></button>
+    <footer class="footer navbar-fixed-bottom">
+        <div class="copyright pull-right">@Html.Localize("LBL_coppyRigh")</div>
+
+    </footer>
+
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/datatable")
+    <script>
+        var itemperpage = 10;
+    </script>
+    <script src="/content/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/content/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/JScustom/common.js"></script>
+    <script src="~/Content/plugins/Messagebox/Lolibox/lobibox.js"></script>
+    <script src="~/Content/plugins/Messagebox/Lolibox/notification.js"></script>
+    @*<script src="~/Scripts/JScustom/CommonPaging.js"></script>*@
+    <script src="~/Scripts/JScustom/jquery.validate.js"></script>
+    <script src="~/Content/plugins/DateTimePicker/jquery.datetimepicker.full.min.js"></script>
+    <script src="~/Scripts/autoNumeric-2.0-BETA.js"></script>
+    <script src="~/Scripts/JScustom/numberFormat.js"></script>
+    <script src="~/Scripts/JScustom/validateLib.js"></script>
+    <script src="~/Content/plugins/UploadFiles/custom-file-input.js"></script>
+    <script src="~/Scripts/loading.js"></script>
+    <script src="~/Content/plugins/select2/js/select2.min.js"></script>
+    <script src="~/Scripts/JScustom/attachFile.js"></script>
+    <script>
+        var icon_next = '<i class="fa fa-angle-double-right" aria-hidden="true"></i>';
+        var icon_review = '<i class="fa fa-angle-double-left" aria-hidden="true"></i>';
+
+    </script>
+    @RenderSection("scripts", required: false)
+    <script>
+
+        var $dOut = $('#date'),
+            $hOut = $('#hours'),
+            $mOut = $('#minutes'),
+            $sOut = $('#seconds'),
+            $ampmOut = $('#ampm');
+
+        var months = [
+            'Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'
+        ];
+
+        var days = [
+            'Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'
+        ];
+
+        function update() {
+            var date = new Date();
+
+            var ampm = date.getHours() < 12
+                ? 'SA'
+                : 'CH';
+
+            var hours = date.getHours() == 0
+                ? 12
+                : date.getHours() > 12
+                    ? date.getHours() - 12
+                    : date.getHours();
+
+            var minutes = date.getMinutes() < 10
+                ? '0' + date.getMinutes()
+                : date.getMinutes();
+
+            var seconds = date.getSeconds() < 10
+                ? '0' + date.getSeconds()
+                : date.getSeconds();
+
+            var dayOfWeek = days[date.getDay()];
+            var month = months[date.getMonth()];
+            var day = date.getDate();
+            var year = date.getFullYear();
+
+            var dateString = dayOfWeek + ', ' + day + ' ' + month + ', ' + year;
+
+            $dOut.text(dateString);
+            $hOut.text(hours);
+            $mOut.text(minutes);
+            $sOut.text(seconds);
+            $ampmOut.text(ampm);
+        }
+
+        update();
+        window.setInterval(update, 1000);
+
+        setActiveMenu();
+        loadFormatDate();
+        scrollToTop();
+
+        $(document).on({
+            ajaxStart: function () {
+                $('.loadicon').show();
+                $('.loadicon').addClass('loader');
+                //DrawLoad();
+            },
+            ajaxStop: function () {
+                Done();
+            }
+
+
+        });
+    </script>
+</body>
+</html>
+
+

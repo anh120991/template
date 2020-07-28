@@ -1,0 +1,52 @@
+﻿@model IEnumerable<HDBH.Models.ViewModel.CPProductImportCommisionListModel>
+@{
+    HDBH.Models.ViewModel.CPProductImportCommisionListModel tempItem = new HDBH.Models.ViewModel.CPProductImportCommisionListModel();
+    if(Model != null && Model.Any())
+    {
+        tempItem.SelectList = new List<HDBH.Models.ViewModel.CPProductImportProductModel>();
+        tempItem.SelectList =  (List<HDBH.Models.ViewModel.CPProductImportProductModel>)Model.FirstOrDefault().SelectList;
+    }
+    else
+    {
+        tempItem.effectedFromDate = DateTime.Now;
+        tempItem.effectedToDate = DateTime.Now.AddDays(30);
+    }
+}
+
+<tr id="trTemplateProduct" class="hidden">
+    @Html.Partial("~/Areas/CPProduct/Views/Shared/_templateCommisionListDetail.cshtml", tempItem)
+</tr>
+
+@if (Model != null && Model.Any())
+{
+    int i = 1;
+    foreach (var item in Model)
+    {
+        string viewModel = ViewBag.viewMode;
+        bool isUpdate = false;
+        if (!string.IsNullOrEmpty(viewModel))
+        {
+            isUpdate = true;
+        }
+        if (i == Model.Count())
+        {
+            item.isShowAdd = true;
+        }
+        else
+        {
+            item.isShowAdd = false;
+        }
+        item.isShowRemove = true;
+        <tr name="rowData">
+            @Html.Partial("~/Areas/CPProduct/Views/Shared/_templateCommisionListDetail.cshtml", item)
+        </tr>
+        i++;
+    }
+}
+else
+{
+<tr isFirst="1" name="rowData">
+    @Html.Partial("~/Areas/CPProduct/Views/Shared/_templateCommisionListDetail.cshtml", tempItem)
+</tr>
+}
+

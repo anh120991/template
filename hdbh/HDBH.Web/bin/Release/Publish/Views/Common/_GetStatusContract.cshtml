@@ -1,0 +1,9 @@
+﻿@model IEnumerable<HDBH.Models.ViewModel.InsContractViewModel>
+
+@if(Model != null && Model.Any())
+{
+    foreach(var item in Model)
+    {
+        <option value="@item.status">@item.statusValue</option>
+    }
+}

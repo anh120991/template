@@ -1,0 +1,169 @@
+﻿<!--Quản lý HĐBH chờ duyệt – Trưởng Đơn Vị-->
+<!--Dutp - 18/7-->
+
+@using HDBH.Models.DatabaseModel
+@{
+    // List Status
+    var lstContractForm = new List<InsuranceContractFormModel>();
+    if (ViewBag.lstContractForm != null)
+    {
+        lstContractForm = ViewBag.lstContractForm;
+    }
+
+    ViewBag.Title = "Quản lý HĐBH chờ duyệt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var isInau = 0;
+    if (ViewBag.isInau != null && ViewBag.isInau == 1)
+    {
+        isInau = ViewBag.isInau;
+        ViewBag.Title = "Quản lý HĐBH chờ duyệt– Trưởng Đơn Vị";
+    }
+    else if (ViewBag.isInau != null && ViewBag.isInau == 2)
+    {
+        isInau = ViewBag.isInau;
+        ViewBag.Title = "Quản lý HĐBH chờ duyệt– BP. Bảo hiểm";
+    }
+
+}
+
+@section pageTitle {
+
+}
+
+<div id="rootList">
+    <div class="col-md-12">
+        <form id="frmSearch">
+            <fieldset class="">
+
+                <!--Field hidden-->
+                <div class="hidden">
+                    <select id="processStatusList" name="processStatusList" multiple="multiple">
+                        <option value="INAU" selected></option>
+                        <option value="INAUCLOSED" selected></option>
+                    </select>
+                </div>
+                <div class="hidden">
+                    <input id="branchCode" name="branchCode" value="@RDAuthorize.BranchCode" />
+                </div>
+                <div class="hidden">
+                    <input id="refInsuranceNo" name="refInsuranceNo" value="" />
+                </div>
+                <div class="hidden">
+                    <input id="contractTypeCode" name="contractTypeCode" value="" />
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        <label class="pull-right">Được tạo từ ngày</label>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group date" data-provide="datepicker">
+                            <input class="datepicker form-control" id="fromDate" name="fromDate" />
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="pull-right">Đến</label>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group date" data-provide="datepicker">
+                            <input class="datepicker form-control" id="toDate" name="toDate" />
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="pull-right">Hình thức HĐ</label>
+
+                    </div>
+                    <div class="col-md-2">
+                        <select id="contractFormCode" name="contractFormCode" class="form-control">
+                            <option value="">--Tất cả--</option>
+                            @if (lstContractForm != null)
+                            {
+                                foreach (var item in lstContractForm)
+                                {
+                                    <option value="@item.contractFormCode">@item.contractFormName</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        <label class="pull-right">Số hợp đồng</label>
+
+                    </div>
+                    <div class="col-md-2">
+                        <input id="insuranceContractNo" name="insuranceContractNo" class="form-control" />
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="pull-right">User cập nhật</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input id="userUpdated" name="userUpdated" class="form-control" />
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="pull-right">Cif khách hàng</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input id="customerCif" name="customerCif" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-10"></div>
+                    <div class="col-md-2">
+                        <button type="button" id="btnSearchInauL1" class="btn btn-primary" name="btnSearchInauL1"><i class="fa fa-search"></i> Tìm kiếm</button>
+                    </div>
+
+                </div>
+            </fieldset>
+        </form>
+
+        <div class="row col-md"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" id="btnApprove" name="btnApprove" class="btn btn-success" disabled>Duyệt</button>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="gridInsuranceInauL1">
+                    @Html.Partial("~/Areas/InsuranceContract/Views/Manager/_tablelist.cshtml")
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/InsuranceContract/InsuranceInauL1.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#processStatusList').select2({
+                width: "100%"
+            });
+
+            $('#contractFormCode').select2({
+                width: "100%"
+            });
+        });
+
+    </script>
+
+}

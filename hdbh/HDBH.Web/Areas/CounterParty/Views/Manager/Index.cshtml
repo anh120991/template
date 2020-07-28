@@ -1,0 +1,165 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+}
+
+@section pageTitle {
+    <div class="tabs tabs-style-tzoid">
+        <nav>
+            <ul>
+                <li class="tab-current"><a><span class="glyphicon glyphicon-th-list"></span><span>Quản lý danh sách đối tác</span></a> </li>
+                <li><a href="@Url.Action("Create")"><span class="glyphicon glyphicon-plus-sign"></span><span>Tạo mới đối tác</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+}
+
+<div id="rootList">
+    <fieldset>
+        <legend>Tìm kiếm đối tác</legend>
+        <div class="row form-group">
+            <div class="col-md-2 left-label">
+                <label class="pull-right">
+                    Ngày cập nhật từ ngày
+                </label>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group date" data-provide="datepicker">
+                    <input class="datepicker form-control" id="fromDate" name="fromDate" value="@DateTime.Now.AddDays(-30).ToShortDateString()" />
+                    <div class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2 left-label">
+                <label class="pull-right">
+                    NGày cập nhật đến ngày
+                </label>
+
+            </div>
+            <div class="col-md-4">
+                <div class="input-group date" data-provide="datepicker">
+                    <input class="datepicker form-control" id="toDate" name="toDate" value="@DateTime.Now.ToShortDateString()" />
+                    <div class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2 left-label">
+                <label class="pull-right">
+                    Số Cif
+                </label>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="cif" name="cif" value="" class="form-control" />
+            </div>
+
+            <div class="col-md-2 left-label">
+                <label class="pull-right">
+                    Tên viết tắt
+                </label>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="shortName" name="shortName" value="" class="form-control" />
+            </div>
+
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2 left-label">
+                <label class="pull-right">
+                    Nhóm đối tác
+                </label>
+            </div>
+            <div class="col-md-4">
+                <select class="form-control" id="cpGroupCode" name="cpGroupCode">
+                    <option value="">Chọn nhóm đối tác</option>
+                    @Html.Raw(Html.Action("_loadCounterPartyGroup", "Manager"))
+                </select>
+            </div>
+            <div class="col-md-2 left-label">
+                <label class="pull-right">
+                    User cập nhật
+                </label>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="userUpdated" name="userUpdated" value="" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 left-label">
+                <label class="pull-right">
+                   Trạng thái
+                </label>
+            </div>
+            <div class="col-md-4">
+                <select class="form-control" id="status" name="status">
+                    <option value="">Tất cả</option>
+                    <option value="@HDBH.Models.Constant.CounterPartyStatusConst.A">Kích hoạt</option>
+                    <option value="@HDBH.Models.Constant.CounterPartyStatusConst.CLOSED">Chưa kích hoạt</option>
+                </select>
+            </div>
+            <div class="col-md-4 offset-2">
+                <div class="right-control">
+                    @Html.ExportButton("btnExport")
+                    @Html.SearchButton("btnSearch")
+
+
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <a class="btn btn-primary " id="btnAdd" name="btnAdd" href="@Url.Action("Create")"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Thêm mới</a>
+            <button class="btn btn-success " id="btnEdit" name="btnEdit" disabled><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;Chỉnh sửa</button>
+        </div>
+        </div>
+<fieldset class="mt-5">
+    <legend>Danh sách tìm kiếm</legend>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="list-table" id="counterPartyTable" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Chọn</th>
+                        <th>Số Cif</th>
+                        <th>Tên đối tác</th>
+                        <th>Tài khoản chuyên thu</th>
+                        <th>Loại đối tác</th>
+                        <th>Trang thái</th>
+                        <th>Người cập nhật</th>
+                        <th>Ngày cập nhật</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</fieldset>
+
+
+</div>
+
+
+@section Scripts {
+
+    <script src="~/Scripts/CounterParty/CounterParty.js"></script>
+
+    <script type="text/javascript">
+        CounterPartyList.Init();
+
+    </script>
+}

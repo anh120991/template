@@ -1,0 +1,1 @@
+You have downloaded Oracle Data Provider for .NET Core from Oracle, the license agreement to which is available at http://www.oracle.com/technetwork/licenses/ea-license-152003.html

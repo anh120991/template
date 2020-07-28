@@ -1,0 +1,17 @@
+﻿@model IEnumerable<HDBH.Web.Models.SelectListModel>
+@if (Model != null && Model.Any())
+{
+    List<string> lsSelected = (List<string>)ViewBag.ListSelected;
+    foreach (var item in Model)
+    {
+        string param = item.Param != null ? item.Param : "";
+        bool isChecked = false;
+        if (lsSelected != null && lsSelected.Any())
+        {
+            isChecked = lsSelected.Any(x => !string.IsNullOrEmpty(x) && x.Trim().ToUpper().Equals(item.Value.Trim().ToUpper())) ? true : false;
+        }
+        <option data-param="@param" value="@item.Value" @(isChecked ? "selected" : "")>@item.Text</option>
+
+    }
+}
+

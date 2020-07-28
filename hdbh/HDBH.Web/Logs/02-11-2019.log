@@ -1,0 +1,6 @@
+﻿ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/02/2019 11:17:49 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/02/2019 11:17:49 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/02/2019 11:17:49 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/02/2019 11:27:43 ((!)) step1
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/02/2019 11:27:43 ((!)) isValid: True
+ERROR ((!)) IIS APPPOOL\hdtsdb.net ((!))  11/02/2019 11:27:43 ((!)) isValid: True isExist: True ActiveDomain: ocb.vnContextType.Domain: Domain
